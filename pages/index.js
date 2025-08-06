@@ -49,12 +49,12 @@ export default function Home() {
           <MetallicPaint
             imageData={imageData}
             params={{
-              edge: 0.1,
-              patternBlur: 0.005,
+              edge: 0,
+              patternBlur: 0.015,
               patternScale: 2,
               refraction: 0.015,
-              speed: 0.3,
-              liquid: 0.07,
+              speed: 0.2,
+              liquid: 0.05,
             }}
           />
         </div>
