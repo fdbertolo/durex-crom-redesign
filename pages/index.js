@@ -31,7 +31,7 @@ export default function Home() {
           property="og:description"
           content="Durex Crom es un establecimiento metalúrgico especializado en recubrimientos de cromo duro, que cuenta además con un anexo de rectificado universal."
         />
-        <meta property="og:image" content="/logo-v.svg" />
+        <meta property="og:image" content="/favicon.svg" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Durex Crom" />
 
