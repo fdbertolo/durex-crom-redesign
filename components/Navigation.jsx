@@ -27,7 +27,7 @@ export const Navigation = ({ dataId }) => {
           <div className="flex items-center md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-100 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[var(--durex-primary)]"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[var(--durex-primary)]"
               aria-expanded="false"
             >
               <span className="sr-only">Open main menu</span>
@@ -55,7 +55,7 @@ export const Navigation = ({ dataId }) => {
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              className="block pl-3 pr-4 py-2 text-base font-medium text-gray-400 hover:text-gray-100 hover:bg-gray-50"
+              className="block pl-3 pr-4 py-2 text-base font-medium text-gray-400 hover:text-gray-100"
             >
               {item}
             </a>

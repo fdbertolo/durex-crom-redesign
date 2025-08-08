@@ -31,7 +31,7 @@ export default function HeroSection() {
   return (
     <div className="flex w-full h-screen bg-[#060010]">
       <div className="flex w-full max-w-7xl mx-auto flex-col md:flex-row justify-center items-center px-4 sm:px-6 lg:px-8">
-        <div style={{ width: "100%", height: "60vh" }} className=" md:mt-0 mt-50">
+        <div style={{ width: "100%", height: "60vh" }} className=" md:mt-0 mt-100">
           {imageData && (
             <MetallicPaint
               imageData={imageData}
@@ -51,7 +51,7 @@ export default function HeroSection() {
           <div className="text-white">
             <div className="max-w-7xl mx-auto">
               {/* Experience Badge */}
-              <div className="inline-flex items-center gap-2 bg-yellow-900/30 text-[var(--durex-accent)] px-4 py-2 rounded-full text-sm mb-8 w-full md:w-fit justify-center">
+              <div className="inline-flex items-center gap-2 bg-yellow-900/30 text-[var(--durex-accent)] px-4 py-2 rounded-full text-sm mb-8">
                 <span className="material-symbols-outlined text-[var(--durex-accent)]">
                   shield
                 </span>
@@ -82,7 +82,7 @@ export default function HeroSection() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="#contacto"
-                  className="w-full bg-[var(--durex-accent)] cursor-pointer hover:text-[var(--durex-accent)] hover:bg-transparent hover:border-[var(--durex-accent)] border text-gray-900 px-6 py-3 rounded-md font-semibold transition-colors gap-2 flex items-center justify-center text-center no-underline"
+                  className="w-full bg-[var(--durex-accent)] cursor-pointer hover:text-[var(--durex-accent)] hover:bg-transparent border-[var(--durex-accent)] border text-gray-900 px-6 py-3 rounded-md font-semibold transition-colors gap-2 flex items-center justify-center text-center no-underline"
                 >
                   Cotice su Proyecto
                   <span className="material-symbols-outlined">
