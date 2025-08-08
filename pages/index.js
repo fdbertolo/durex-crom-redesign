@@ -1,10 +1,11 @@
 import Head from "next/head";
 import Footer from "@components/Footer";
 import HeroSection from "@components/HeroSection";
+import { Navigation } from "@components/Navigation";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center relative">
       <Head>
         <title>Durex Crom</title>
         <link rel="icon" href="/favicon.svg" />
@@ -13,7 +14,7 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-
+      <Navigation dataId="navigation" />
       <main className="flex flex-col items-center w-full">
         <HeroSection />
       </main>
