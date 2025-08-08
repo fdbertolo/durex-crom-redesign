@@ -13,6 +13,21 @@ export default function Home() {
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0"
           rel="stylesheet"
         />
+        <meta name="author" content="https://fernandobertolo.netlify.app" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1"
+        />
+        <meta
+          name="keywords"
+          content="Cromo duro, Rectificado, Cromado industrial, Rectificado Universal"
+        />
+        <meta
+          name="description"
+          content="Durex Crom es un establecimiento metalúrgico especializado en recubrimientos de cromo duro, que cuenta además con un anexo de rectificado universal."
+        />
+        <link rel="image_src" href="/logo-v.svg" />
+
       </Head>
       <Navigation dataId="navigation" />
       <main className="flex flex-col items-center w-full">
