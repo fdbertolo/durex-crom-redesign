@@ -29,9 +29,9 @@ export default function HeroSection() {
   }
 
   return (
-    <div className="flex w-full h-screen bg-[#060010]">
-      <div className="flex w-full max-w-7xl mx-auto flex-col md:flex-row justify-center items-center px-4 sm:px-6 lg:px-8">
-        <div style={{ width: "100%", height: "60vh" }} className=" md:mt-0 mt-100">
+    <div className="flex w-full h-full md:h-screen bg-[#060010]">
+      <div className="flex w-full max-w-7xl mx-auto flex-col md:flex-row justify-center items-center px-4 sm:px-6 lg:px-8 mb-8 md:mb-0">
+        <div style={{ width: "100%", height: "60vh" }} className=" md:mt-0 mt-[70px]">
           {imageData && (
             <MetallicPaint
               imageData={imageData}
