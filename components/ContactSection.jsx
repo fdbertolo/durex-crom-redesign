@@ -227,7 +227,7 @@ export default function ContactSection() {
                     <p className="hidden">
                       <label>
                         No llenar este campo:{" "}
-                        <input name="bot-field" onChange={handleInputChange} />
+                        <input name="bot-field" />
                       </label>
                     </p>
 
