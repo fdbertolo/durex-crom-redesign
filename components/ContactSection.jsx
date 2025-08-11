@@ -66,39 +66,44 @@ export default function ContactSection() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    const validationErrors = validateForm();
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
-    }
+  e.preventDefault();
+  const validationErrors = validateForm();
+  if (Object.keys(validationErrors).length > 0) {
+    setErrors(validationErrors);
+    return;
+  }
 
-    setLoading(true);
-    setSuccess(false);
+  setLoading(true);
+  setSuccess(false);
 
-    const form = e.target;
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(new FormData(form)).toString(),
-    })
-      .then(() => {
-        setLoading(false);
-        setSuccess(true);
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          company: "",
-          message: "",
-        });
-        setTimeout(() => setSuccess(false), 5000); // Ocultar mensaje de éxito después de 5 segundos
-      })
-      .catch((error) => {
-        setLoading(false);
-        alert("Error al enviar: " + error);
+
+  const encodedData = new URLSearchParams({
+    "form-name": "contact",
+    ...formData,
+  }).toString();
+
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: encodedData, 
+  })
+    .then(() => {
+      setLoading(false);
+      setSuccess(true);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        message: "",
       });
-  };
+      setTimeout(() => setSuccess(false), 5000);
+    })
+    .catch((error) => {
+      setLoading(false);
+      alert("Error al enviar: " + error);
+    });
+};
 
   return (
     <section
