@@ -39,7 +39,7 @@ export default function Home() {
         <meta property="og:site_name" content="Durex Crom" />
       </Head>
       <Navigation dataId="navigation" />
-      <main className="flex flex-col items-center w-full">
+      <main className="flex flex-col items-center w-full overflow-hidden">
         <HeroSection />
         <AboutSection />
         <EnvironmentSection />
