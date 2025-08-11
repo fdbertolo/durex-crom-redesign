@@ -2,13 +2,13 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle, Loader2 } from "lucide-react";
 import { Card, CardContent } from "./Card";
 import { Input } from "./Input";
 import { Textarea } from "./Textarea";
 import { Label } from "./Label";
 
-export function ContactSection() {
+export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,7 +16,9 @@ export function ContactSection() {
     company: "",
     message: "",
   });
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [success, setSuccess] = useState(false);
 
   const contactInfo = [
     {
@@ -35,7 +37,7 @@ export function ContactSection() {
       icon: MapPin,
       title: "Dirección",
       value: "Enrique Fernández 2355, Lanús Oeste, Buenos Aires",
-      link: "https://maps.google.com/?q=Enrique+Fernández+2355,+Lanús+Oeste,+Buenos+Aires",
+      link: "https://www.google.com/maps/place/Enrique+Fern%C3%A1ndez+2355,+B1824+Lan%C3%BAs+Oeste,+Provincia+de+Buenos+Aires/@-34.693427,-58.423985,17z/data=!3m1!4b1!4m6!3m5!1s0x95bccd4d76a5a22d:0xd08a7065977926b4!8m2!3d-34.6934314!4d-58.4214041!16s%2Fg%2F11csb47n8w?entry=ttu",
     },
     {
       icon: Clock,
@@ -46,47 +48,56 @@ export function ContactSection() {
   ];
 
   const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setErrors({ ...errors, [e.target.name]: "" });
   };
 
-  const handleSubmit = async (e) => {
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) newErrors.name = "El nombre es obligatorio";
+    if (!formData.email.trim()) {
+      newErrors.email = "El email es obligatorio";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "El email no es válido";
+    }
+    if (!formData.message.trim())
+      newErrors.message = "El mensaje es obligatorio";
+    return newErrors;
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    setLoading(true);
+    setSuccess(false);
 
     const form = e.target;
-    const formData = new FormData(form);
-
-    try {
-      const response = await fetch("/", {
-        method: "POST",
-        body: new URLSearchParams(formData).toString(),
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(new FormData(form)).toString(),
+    })
+      .then(() => {
+        setLoading(false);
+        setSuccess(true);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          message: "",
+        });
+        setTimeout(() => setSuccess(false), 5000); // Ocultar mensaje de éxito después de 5 segundos
+      })
+      .catch((error) => {
+        setLoading(false);
+        alert("Error al enviar: " + error);
       });
-
-      if (response.ok) {
-        setIsSubmitted(true);
-        setTimeout(() => {
-          setIsSubmitted(false);
-          setFormData({
-            name: "",
-            email: "",
-            phone: "",
-            company: "",
-            message: "",
-          });
-        }, 3000);
-      } else {
-        console.error("Netlify form submission failed:", response.statusText);
-        alert("Ocurrió un error al enviar el formulario. Intente de nuevo más tarde.");
-      }
-    } catch (err) {
-      console.error("Netlify form submission error:", err);
-      alert("No se pudo conectar con el servidor. Verifique su conexión.");
-    }
   };
 
   return (
@@ -182,7 +193,7 @@ export function ContactSection() {
                   la brevedad.
                 </p>
 
-                {isSubmitted ? (
+                {success ? (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -206,16 +217,16 @@ export function ContactSection() {
                     className="space-y-8"
                   >
                     <input type="hidden" name="form-name" value="contact" />
-                    {/* Honeypot field - Visually hidden to prevent bots from filling it out */}
+
+                    {/* Honeypot */}
                     <p className="hidden">
                       <label>
                         No llenar este campo:{" "}
-                        <input
-                          name="bot-field"
-                          onChange={handleInputChange}
-                        />
+                        <input name="bot-field" onChange={handleInputChange} />
                       </label>
                     </p>
+
+                    {/* Nombre y Email */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-3">
                         <Label
@@ -231,9 +242,12 @@ export function ContactSection() {
                           value={formData.name}
                           onChange={handleInputChange}
                           required
-                          className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] h-12"
                           placeholder="Su nombre completo"
+                          className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] h-12"
                         />
+                        {errors.name && (
+                          <p className="text-red-400 text-sm">{errors.name}</p>
+                        )}
                       </div>
                       <div className="space-y-3">
                         <Label
@@ -249,12 +263,16 @@ export function ContactSection() {
                           value={formData.email}
                           onChange={handleInputChange}
                           required
-                          className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] h-12"
                           placeholder="su.email@empresa.com"
+                          className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] h-12"
                         />
+                        {errors.email && (
+                          <p className="text-red-400 text-sm">{errors.email}</p>
+                        )}
                       </div>
                     </div>
 
+                    {/* Teléfono y Empresa */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-3">
                         <Label
@@ -269,8 +287,8 @@ export function ContactSection() {
                           type="tel"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] h-12"
                           placeholder="+54 11 1234 5678"
+                          className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] h-12"
                         />
                       </div>
                       <div className="space-y-3">
@@ -286,12 +304,13 @@ export function ContactSection() {
                           type="text"
                           value={formData.company}
                           onChange={handleInputChange}
-                          className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] h-12"
                           placeholder="Nombre de su empresa"
+                          className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] h-12"
                         />
                       </div>
                     </div>
 
+                    {/* Mensaje */}
                     <div className="space-y-3">
                       <Label
                         htmlFor="message"
@@ -306,18 +325,35 @@ export function ContactSection() {
                         onChange={handleInputChange}
                         required
                         rows={6}
+                        placeholder="Describa su proyecto..."
                         className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] resize-none"
-                        placeholder="Describa su proyecto: dimensiones de las piezas, tipo de material, cantidad, fechas de entrega, etc."
                       />
+                      {errors.message && (
+                        <p className="text-red-400 text-sm">{errors.message}</p>
+                      )}
                     </div>
 
+                    {/* Botón con spinner */}
                     <button
                       type="submit"
-                      className="cursor-pointer w-full bg-[var(--durex-accent)] text-[var(--durex-dark)] hover:text-[var(--durex-accent)] hover:bg-transparent border-[var(--durex-accent)] border transition-all duration-300 h-14 text-lg font-bold flex items-center justify-center rounded-md"
+                      disabled={loading}
+                      className="cursor-pointer w-full bg-[var(--durex-accent)] text-[var(--durex-dark)] hover:text-[var(--durex-accent)] hover:bg-transparent border-[var(--durex-accent)] border transition-all duration-300 h-14 text-lg font-bold flex items-center justify-center rounded-md disabled:opacity-50"
                     >
-                      <Send className="w-6 h-6 mr-3" />
-                      Enviar Consulta
+                      {loading ? (
+                        <Loader2 className="w-6 h-6 mr-3 animate-spin" />
+                      ) : (
+                        <Send className="w-6 h-6 mr-3" />
+                      )}
+                      {loading ? "Enviando..." : "Enviar Consulta"}
                     </button>
+
+                    {/* Mensaje de éxito */}
+                    {success && (
+                      <p className="text-green-400 text-sm mt-2">
+                        ¡Formulario enviado con éxito! Pronto nos pondremos en
+                        contacto.
+                      </p>
+                    )}
                   </form>
                 )}
               </CardContent>
@@ -367,7 +403,7 @@ export function ContactSection() {
 
             <div className="bg-white/5 border-white/10 overflow-hidden rounded-xl shadow-lg">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.4587413680433!2d-58.41266492425582!3d-34.69360767292223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcccf0e84ca899%3A0x462aa84e9d20a507!2sEnrique%20Fern%C3%A1ndez%202355%2C%20B1824FCZ%20Lan%C3%BAs%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1754928222721!5m2!1ses-419!2sar"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.771239857962!2d-58.42398502399908!3d-34.69342706037302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccd4d76a5a22d%3A0xd08a7065977926b4!2sEnrique%20Fern%C3%A1ndez%202355%2C%20B1824%20Lan%C3%BAs%20Oeste%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1723405786884!5m2!1ses!2sar"
                 width="100%"
                 height="325"
                 loading="lazy"
