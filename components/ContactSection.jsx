@@ -1,5 +1,3 @@
-// src/components/ContactSection.jsx
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -56,10 +54,10 @@ export function ContactSection() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     const form = e.target;
     const formData = new FormData(form);
-    
+
     try {
       const response = await fetch("/", {
         method: "POST",
@@ -202,10 +200,22 @@ export function ContactSection() {
                   <form
                     name="contact"
                     method="POST"
+                    data-netlify="true"
+                    netlify-honeypot="bot-field"
                     onSubmit={handleSubmit}
                     className="space-y-8"
                   >
                     <input type="hidden" name="form-name" value="contact" />
+                    {/* Honeypot field - Visually hidden to prevent bots from filling it out */}
+                    <p className="hidden">
+                      <label>
+                        No llenar este campo:{" "}
+                        <input
+                          name="bot-field"
+                          onChange={handleInputChange}
+                        />
+                      </label>
+                    </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-3">
                         <Label
