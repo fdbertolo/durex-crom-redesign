@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Footer from "@components/Footer";
 import HeroSection from "@components/HeroSection";
+import { AboutSection } from "@components/AboutSection";
+import { EnvironmentSection } from "@components/EnvironmentSection";
 import { Navigation } from "@components/Navigation";
 
 export default function Home() {
@@ -34,11 +36,12 @@ export default function Home() {
         <meta property="og:image" content="/favicon.png" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Durex Crom" />
-
       </Head>
       <Navigation dataId="navigation" />
       <main className="flex flex-col items-center w-full">
         <HeroSection />
+        <AboutSection />
+        <EnvironmentSection />
       </main>
 
       <Footer />

@@ -91,7 +91,7 @@ export default function HeroSection() {
                 </a>
                 <a
                   href="#aplicaciones"
-                  className="w-full cursor-pointer border border-gray-600 hover:text-[var(--durex-accent)] hover:bg-transparent hover:border-[var(--durex-accent)] text-white px-6 py-3 rounded-md font-semibold transition-colors"
+                  className="w-full cursor-pointer border border-gray-600 hover:text-[var(--durex-accent)] hover:bg-transparent hover:border-[var(--durex-accent)] text-white px-6 py-3 rounded-md font-semibold transition-colors flex justify-center"
                 >
                   Descubra Nuestras Capacidades
                 </a>

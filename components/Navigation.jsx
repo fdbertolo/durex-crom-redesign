@@ -39,7 +39,7 @@ export const Navigation = ({ dataId }) => {
             {menuItems.map((item) => (
               <a
                 key={item}
-                href={`#${item.toLowerCase()}`}
+                href={`#${item.toLowerCase().replace(/ /g, '-')}`}
                 className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-400 hover:text-gray-100 border-b-2 border-transparent hover:border-gray-300"
               >
                 {item}
