@@ -52,23 +52,41 @@ export function ContactSection() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // In a real application, you would send the form data to your backend
-    console.log("Form submitted:", formData);
-    setIsSubmitted(true);
-
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        message: "",
+    
+    // Convertir el estado del formulario a un formato compatible con Netlify
+    const form = e.target;
+    const formData = new FormData(form);
+    
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        body: new URLSearchParams(formData).toString(),
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
       });
-    }, 3000);
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        // Reset form after 3 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            company: "",
+            message: "",
+          });
+        }, 3000);
+      } else {
+        console.error("Error al enviar el mensaje:", response.statusText);
+      }
+    } catch (err) {
+      console.error("Error al enviar el mensaje:", err);
+    }
   };
 
   return (
@@ -182,7 +200,16 @@ export function ContactSection() {
                     </p>
                   </motion.div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-8">
+                  <form
+                    name="contact"
+                    method="POST"
+                    data-netlify="true"
+                    onSubmit={handleSubmit}
+                    className="space-y-8"
+                  >
+                    {/* Este input hidden es crucial para que Netlify Forms funcione en React */}
+                    <input type="hidden" name="form-name" value="contact" />
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-3">
                         <Label

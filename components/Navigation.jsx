@@ -12,7 +12,7 @@ export const Navigation = ({ dataId }) => {
     'Contacto',
   ]
   return (
-    <nav className="w-full bg-[var(--durex-dark)] fixed top-0 shadow-[0px_4px_6px_1px_#583b8f33]" data-id={dataId}>
+    <nav className="w-full bg-[var(--durex-dark)] fixed top-0 shadow-[0px_4px_6px_1px_#583b8f33] z-99" data-id={dataId}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* Logo */}

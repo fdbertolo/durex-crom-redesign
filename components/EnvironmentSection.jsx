@@ -198,7 +198,7 @@ export function EnvironmentSection() {
               Nos enorgullece ser pioneros en sostenibilidad industrial, combinando excelencia técnica 
               con un compromiso inquebrantable hacia la protección del medio ambiente.
             </p>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-8">
+            <div className="bg-white/10 rounded-xl p-6 mb-8">
               <div className="text-2xl font-bold text-[var(--durex-accent)] mb-2">
                 VUELCO CERO AL MEDIO AMBIENTE
               </div>
