@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import { Card, CardContent } from "./Card";
 import { Input } from "./Input";
 import { Textarea } from "./Textarea";
@@ -16,7 +16,6 @@ export function ContactSection() {
     company: "",
     message: "",
   });
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const contactInfo = [
     {
@@ -52,45 +51,6 @@ export function ContactSection() {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    const form = e.target;
-    const formData = new FormData(form);
-    
-    try {
-      const response = await fetch("/", {
-        method: "POST",
-        body: new URLSearchParams(formData).toString(),
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-      });
-
-      if (response.ok) {
-        setIsSubmitted(true);
-        // Resetear el formulario después de 3 segundos
-        setTimeout(() => {
-          setIsSubmitted(false);
-          setFormData({
-            name: "",
-            email: "",
-            phone: "",
-            company: "",
-            message: "",
-          });
-        }, 3000);
-      } else {
-        // Manejo de errores
-        console.error("Netlify form submission failed:", response.statusText);
-        alert("Ocurrió un error al enviar el formulario. Intente de nuevo más tarde.");
-      }
-    } catch (err) {
-      console.error("Netlify form submission error:", err);
-      alert("No se pudo conectar con el servidor. Verifique su conexión.");
-    }
-  };
-
   return (
     <section
       id="contacto"
@@ -119,7 +79,6 @@ export function ContactSection() {
           </p>
         </motion.div>
 
-        {/* Contact Information Cards - Full Width at Top */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -167,9 +126,7 @@ export function ContactSection() {
           ))}
         </motion.div>
 
-        {/* Main Content - Form and Map */}
         <div className="grid lg:grid-cols-5 gap-16">
-          {/* Contact Form - Takes more space */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -187,137 +144,120 @@ export function ContactSection() {
                   la brevedad.
                 </p>
 
-                {isSubmitted ? (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="text-center py-12"
-                  >
-                    <CheckCircle className="w-20 h-20 text-green-500 mx-auto mb-6" />
-                    <h4 className="text-2xl font-bold text-green-500 mb-4">
-                      ¡Mensaje Enviado Exitosamente!
-                    </h4>
-                    <p className="text-gray-300 text-lg">
-                      Nos pondremos en contacto con usted a la brevedad.
-                    </p>
-                  </motion.div>
-                ) : (
-                  <form
-                    name="contact"
-                    method="POST"
-                    data-netlify="true"
-                    onSubmit={handleSubmit}
-                    className="space-y-8"
-                  >
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-3">
-                        <Label
-                          htmlFor="name"
-                          className="text-white text-base font-medium"
-                        >
-                          Nombre Completo *
-                        </Label>
-                        <Input
-                          id="name"
-                          name="name"
-                          type="text"
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          required
-                          className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] h-12"
-                          placeholder="Su nombre completo"
-                        />
-                      </div>
-                      <div className="space-y-3">
-                        <Label
-                          htmlFor="email"
-                          className="text-white text-base font-medium"
-                        >
-                          Email *
-                        </Label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          required
-                          className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] h-12"
-                          placeholder="su.email@empresa.com"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-3">
-                        <Label
-                          htmlFor="phone"
-                          className="text-white text-base font-medium"
-                        >
-                          Teléfono
-                        </Label>
-                        <Input
-                          id="phone"
-                          name="phone"
-                          type="tel"
-                          value={formData.phone}
-                          onChange={handleInputChange}
-                          className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] h-12"
-                          placeholder="+54 11 1234 5678"
-                        />
-                      </div>
-                      <div className="space-y-3">
-                        <Label
-                          htmlFor="company"
-                          className="text-white text-base font-medium"
-                        >
-                          Empresa
-                        </Label>
-                        <Input
-                          id="company"
-                          name="company"
-                          type="text"
-                          value={formData.company}
-                          onChange={handleInputChange}
-                          className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] h-12"
-                          placeholder="Nombre de su empresa"
-                        />
-                      </div>
-                    </div>
-
+                <form
+                  name="contact"
+                  method="POST"
+                  data-netlify="true"
+                  action="/success"
+                  className="space-y-8"
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-3">
                       <Label
-                        htmlFor="message"
+                        htmlFor="name"
                         className="text-white text-base font-medium"
                       >
-                        Mensaje *
+                        Nombre Completo *
                       </Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
+                      <Input
+                        id="name"
+                        name="name"
+                        type="text"
+                        value={formData.name}
                         onChange={handleInputChange}
                         required
-                        rows={6}
-                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] resize-none"
-                        placeholder="Describa su proyecto: dimensiones de las piezas, tipo de material, cantidad, fechas de entrega, etc."
+                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] h-12"
+                        placeholder="Su nombre completo"
                       />
                     </div>
+                    <div className="space-y-3">
+                      <Label
+                        htmlFor="email"
+                        className="text-white text-base font-medium"
+                      >
+                        Email *
+                      </Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
+                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] h-12"
+                        placeholder="su.email@empresa.com"
+                      />
+                    </div>
+                  </div>
 
-                    <button
-                      type="submit"
-                      className="cursor-pointer w-full bg-[var(--durex-accent)] text-[var(--durex-dark)] hover:text-[var(--durex-accent)] hover:bg-transparent border-[var(--durex-accent)] border transition-all duration-300 h-14 text-lg font-bold flex items-center justify-center rounded-md"
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-3">
+                      <Label
+                        htmlFor="phone"
+                        className="text-white text-base font-medium"
+                      >
+                        Teléfono
+                      </Label>
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] h-12"
+                        placeholder="+54 11 1234 5678"
+                      />
+                    </div>
+                    <div className="space-y-3">
+                      <Label
+                        htmlFor="company"
+                        className="text-white text-base font-medium"
+                      >
+                        Empresa
+                      </Label>
+                      <Input
+                        id="company"
+                        name="company"
+                        type="text"
+                        value={formData.company}
+                        onChange={handleInputChange}
+                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] h-12"
+                        placeholder="Nombre de su empresa"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-3">
+                    <Label
+                      htmlFor="message"
+                      className="text-white text-base font-medium"
                     >
-                      <Send className="w-6 h-6 mr-3" />
-                      Enviar Consulta
-                    </button>
-                  </form>
-                )}
+                      Mensaje *
+                    </Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      required
+                      rows={6}
+                      className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] resize-none"
+                      placeholder="Describa su proyecto: dimensiones de las piezas, tipo de material, cantidad, fechas de entrega, etc."
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="cursor-pointer w-full bg-[var(--durex-accent)] text-[var(--durex-dark)] hover:text-[var(--durex-accent)] hover:bg-transparent border-[var(--durex-accent)] border transition-all duration-300 h-14 text-lg font-bold flex items-center justify-center rounded-md"
+                  >
+                    <Send className="w-6 h-6 mr-3" />
+                    Enviar Consulta
+                  </button>
+                </form>
               </CardContent>
             </Card>
           </motion.div>
 
-          {/* Location and Additional Info - Takes less space */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -325,7 +265,6 @@ export function ContactSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:col-span-2 space-y-8"
           >
-            {/* Additional Information */}
             <Card className="bg-white/5 border-white/10">
               <CardContent className="p-6">
                 <h4 className="text-xl font-bold text-[var(--durex-accent)] mb-4">
@@ -360,7 +299,6 @@ export function ContactSection() {
               </CardContent>
             </Card>
 
-            {/* Location Map */}
             <div className="bg-white/5 border-white/10 overflow-hidden rounded-xl shadow-lg">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.4587413680433!2d-58.41266492425582!3d-34.69360767292223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcccf0e84ca899%3A0x462aa84e9d20a507!2sEnrique%20Fern%C3%A1ndez%202355%2C%20B1824FCZ%20Lan%C3%BAs%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1754928222721!5m2!1ses-419!2sar"
