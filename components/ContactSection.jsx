@@ -55,7 +55,6 @@ export function ContactSection() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Convertir el estado del formulario a un formato compatible con Netlify
     const form = e.target;
     const formData = new FormData(form);
     
@@ -70,7 +69,7 @@ export function ContactSection() {
 
       if (response.ok) {
         setIsSubmitted(true);
-        // Reset form after 3 seconds
+        // Resetear el formulario después de 3 segundos
         setTimeout(() => {
           setIsSubmitted(false);
           setFormData({
@@ -82,10 +81,13 @@ export function ContactSection() {
           });
         }, 3000);
       } else {
-        console.error("Error al enviar el mensaje:", response.statusText);
+        // Manejo de errores
+        console.error("Netlify form submission failed:", response.statusText);
+        alert("Ocurrió un error al enviar el formulario. Intente de nuevo más tarde.");
       }
     } catch (err) {
-      console.error("Error al enviar el mensaje:", err);
+      console.error("Netlify form submission error:", err);
+      alert("No se pudo conectar con el servidor. Verifique su conexión.");
     }
   };
 
@@ -207,9 +209,6 @@ export function ContactSection() {
                     onSubmit={handleSubmit}
                     className="space-y-8"
                   >
-                    {/* Este input hidden es crucial para que Netlify Forms funcione en React */}
-                    <input type="hidden" name="form-name" value="contact" />
-
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-3">
                         <Label
