@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <>
-      <footer className="border-t border-gray-200 px-4 py-12 w-full bg-[var(--durex-dark)]">
+      <footer className="border-t border-gray-800 px-4 py-12 w-full bg-[var(--durex-dark)]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-16 px-8">
           <div className="flex flex-col flex-1 gap-4">
             <img

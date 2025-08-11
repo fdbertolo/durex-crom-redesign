@@ -78,8 +78,8 @@ export function EnvironmentSection() {
 
               <div className="bg-white rounded-xl p-6 shadow-lg">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Award className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Award className="w-6 h-6 text-green-700" />
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900 mb-2">Resultado Innovador</h4>
@@ -208,7 +208,7 @@ export function EnvironmentSection() {
             </div>
             <a 
               href="#contacto"
-              className="inline-flex items-center px-8 py-4 bg-[var(--durex-accent)] text-gray-900 rounded-lg font-bold hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105"
+              className="inline-flex items-center px-8 py-4 bg-[var(--durex-accent)] text-gray-900 rounded-lg font-bold hover:text-[var(--durex-accent)] hover:bg-transparent border-[var(--durex-accent)] border"
             >
               Conozca Más Sobre Nuestros Procesos
               <ArrowRight className="w-5 h-5 ml-2" />

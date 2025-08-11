@@ -4,6 +4,7 @@ import HeroSection from "@components/HeroSection";
 import { AboutSection } from "@components/AboutSection";
 import { EnvironmentSection } from "@components/EnvironmentSection";
 import { Navigation } from "@components/Navigation";
+import { ContactSection } from "@components/ContactSection";
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
         <title>Durex Crom</title>
         <link rel="icon" href="/favicon.svg" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0"
           rel="stylesheet"
         />
         <meta name="author" content="https://fernandobertolo.netlify.app" />
@@ -42,6 +43,7 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <EnvironmentSection />
+        <ContactSection />
       </main>
 
       <Footer />
