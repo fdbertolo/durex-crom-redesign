@@ -1,8 +1,10 @@
+// src/components/ContactSection.jsx
+
 "use client";
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
 import { Card, CardContent } from "./Card";
 import { Input } from "./Input";
 import { Textarea } from "./Textarea";
@@ -16,6 +18,7 @@ export function ContactSection() {
     company: "",
     message: "",
   });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const contactInfo = [
     {
@@ -49,6 +52,43 @@ export function ContactSection() {
       ...formData,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    const form = e.target;
+    const formData = new FormData(form);
+    
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        body: new URLSearchParams(formData).toString(),
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            company: "",
+            message: "",
+          });
+        }, 3000);
+      } else {
+        console.error("Netlify form submission failed:", response.statusText);
+        alert("Ocurrió un error al enviar el formulario. Intente de nuevo más tarde.");
+      }
+    } catch (err) {
+      console.error("Netlify form submission error:", err);
+      alert("No se pudo conectar con el servidor. Verifique su conexión.");
+    }
   };
 
   return (
@@ -144,116 +184,132 @@ export function ContactSection() {
                   la brevedad.
                 </p>
 
-                <form
-                  name="contact"
-                  method="POST"
-                  data-netlify="true"
-                  action="/success"
-                  className="space-y-8"
-                >
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-3">
-                      <Label
-                        htmlFor="name"
-                        className="text-white text-base font-medium"
-                      >
-                        Nombre Completo *
-                      </Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        type="text"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] h-12"
-                        placeholder="Su nombre completo"
-                      />
-                    </div>
-                    <div className="space-y-3">
-                      <Label
-                        htmlFor="email"
-                        className="text-white text-base font-medium"
-                      >
-                        Email *
-                      </Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] h-12"
-                        placeholder="su.email@empresa.com"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-3">
-                      <Label
-                        htmlFor="phone"
-                        className="text-white text-base font-medium"
-                      >
-                        Teléfono
-                      </Label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] h-12"
-                        placeholder="+54 11 1234 5678"
-                      />
-                    </div>
-                    <div className="space-y-3">
-                      <Label
-                        htmlFor="company"
-                        className="text-white text-base font-medium"
-                      >
-                        Empresa
-                      </Label>
-                      <Input
-                        id="company"
-                        name="company"
-                        type="text"
-                        value={formData.company}
-                        onChange={handleInputChange}
-                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] h-12"
-                        placeholder="Nombre de su empresa"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-3">
-                    <Label
-                      htmlFor="message"
-                      className="text-white text-base font-medium"
-                    >
-                      Mensaje *
-                    </Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      required
-                      rows={6}
-                      className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] resize-none"
-                      placeholder="Describa su proyecto: dimensiones de las piezas, tipo de material, cantidad, fechas de entrega, etc."
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="cursor-pointer w-full bg-[var(--durex-accent)] text-[var(--durex-dark)] hover:text-[var(--durex-accent)] hover:bg-transparent border-[var(--durex-accent)] border transition-all duration-300 h-14 text-lg font-bold flex items-center justify-center rounded-md"
+                {isSubmitted ? (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="text-center py-12"
                   >
-                    <Send className="w-6 h-6 mr-3" />
-                    Enviar Consulta
-                  </button>
-                </form>
+                    <CheckCircle className="w-20 h-20 text-green-500 mx-auto mb-6" />
+                    <h4 className="text-2xl font-bold text-green-500 mb-4">
+                      ¡Mensaje Enviado Exitosamente!
+                    </h4>
+                    <p className="text-gray-300 text-lg">
+                      Nos pondremos en contacto con usted a la brevedad.
+                    </p>
+                  </motion.div>
+                ) : (
+                  <form
+                    name="contact"
+                    method="POST"
+                    onSubmit={handleSubmit}
+                    className="space-y-8"
+                  >
+                    <input type="hidden" name="form-name" value="contact" />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-3">
+                        <Label
+                          htmlFor="name"
+                          className="text-white text-base font-medium"
+                        >
+                          Nombre Completo *
+                        </Label>
+                        <Input
+                          id="name"
+                          name="name"
+                          type="text"
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          required
+                          className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] h-12"
+                          placeholder="Su nombre completo"
+                        />
+                      </div>
+                      <div className="space-y-3">
+                        <Label
+                          htmlFor="email"
+                          className="text-white text-base font-medium"
+                        >
+                          Email *
+                        </Label>
+                        <Input
+                          id="email"
+                          name="email"
+                          type="email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          required
+                          className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] h-12"
+                          placeholder="su.email@empresa.com"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-3">
+                        <Label
+                          htmlFor="phone"
+                          className="text-white text-base font-medium"
+                        >
+                          Teléfono
+                        </Label>
+                        <Input
+                          id="phone"
+                          name="phone"
+                          type="tel"
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] h-12"
+                          placeholder="+54 11 1234 5678"
+                        />
+                      </div>
+                      <div className="space-y-3">
+                        <Label
+                          htmlFor="company"
+                          className="text-white text-base font-medium"
+                        >
+                          Empresa
+                        </Label>
+                        <Input
+                          id="company"
+                          name="company"
+                          type="text"
+                          value={formData.company}
+                          onChange={handleInputChange}
+                          className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] h-12"
+                          placeholder="Nombre de su empresa"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-3">
+                      <Label
+                        htmlFor="message"
+                        className="text-white text-base font-medium"
+                      >
+                        Mensaje *
+                      </Label>
+                      <Textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        required
+                        rows={6}
+                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-[var(--durex-accent)] resize-none"
+                        placeholder="Describa su proyecto: dimensiones de las piezas, tipo de material, cantidad, fechas de entrega, etc."
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="cursor-pointer w-full bg-[var(--durex-accent)] text-[var(--durex-dark)] hover:text-[var(--durex-accent)] hover:bg-transparent border-[var(--durex-accent)] border transition-all duration-300 h-14 text-lg font-bold flex items-center justify-center rounded-md"
+                    >
+                      <Send className="w-6 h-6 mr-3" />
+                      Enviar Consulta
+                    </button>
+                  </form>
+                )}
               </CardContent>
             </Card>
           </motion.div>
