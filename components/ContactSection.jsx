@@ -110,7 +110,9 @@ export default function ContactSection() {
         setLoading(false);
         // Es mejor mostrar el error en la UI en lugar de un alert.
         console.error("Error al enviar el formulario:", error);
-        setErrors({ form: "Hubo un error al enviar el mensaje. Por favor, intente de nuevo." });
+        setErrors({
+          form: "Hubo un error al enviar el mensaje. Por favor, intente de nuevo.",
+        });
       });
   };
 
@@ -122,7 +124,12 @@ export default function ContactSection() {
         para que sepa que debe manejar los envíos del formulario "contact".
         Debe incluir todos los campos que se envían.
       */}
-      <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <form
+        name="contact"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        hidden
+      >
         <input type="hidden" name="form-name" value="contact" />
         <input type="text" name="name" />
         <input type="email" name="email" />
@@ -133,7 +140,7 @@ export default function ContactSection() {
 
       <section
         id="contacto"
-        className="w-full py-20 bg-gray-900 text-white" // Usando colores de Tailwind para el ejemplo
+        className="w-full py-25 bg-[var(--durex-dark)] text-white"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -149,8 +156,7 @@ export default function ContactSection() {
               </span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Solicite su{" "}
-              <span className="text-yellow-400">Cotización</span>
+              Solicite su <span className="text-yellow-400">Cotización</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Estamos listos para atender sus proyectos de gran formato. <br />
@@ -219,8 +225,8 @@ export default function ContactSection() {
                     Formulario de Contacto
                   </h3>
                   <p className="text-gray-300 mb-8">
-                    Complete el formulario y nos pondremos en contacto con usted a
-                    la brevedad.
+                    Complete el formulario y nos pondremos en contacto con usted
+                    a la brevedad.
                   </p>
 
                   {success ? (
@@ -231,7 +237,7 @@ export default function ContactSection() {
                     >
                       <CheckCircle className="w-20 h-20 text-green-500 mx-auto mb-6" />
                       <h4 className="text-2xl font-bold text-green-500 mb-4">
-                        ¡Mensaje Enviado Exitosamente!
+                        ¡Mensaje enviado exitosamente!
                       </h4>
                       <p className="text-gray-300 text-lg">
                         Nos pondremos en contacto con usted a la brevedad.
@@ -245,18 +251,24 @@ export default function ContactSection() {
                       className="space-y-8"
                     >
                       <input type="hidden" name="form-name" value="contact" />
-                      
+
                       {/* Honeypot field para Netlify */}
                       <p className="hidden">
                         <label>
                           Don’t fill this out if you’re human:{" "}
-                          <input name="bot-field" onChange={handleInputChange} />
+                          <input
+                            name="bot-field"
+                            onChange={handleInputChange}
+                          />
                         </label>
                       </p>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-3">
-                          <Label htmlFor="name" className="text-white text-base font-medium">
+                          <Label
+                            htmlFor="name"
+                            className="text-white text-base font-medium"
+                          >
                             Nombre Completo *
                           </Label>
                           <Input
@@ -270,11 +282,16 @@ export default function ContactSection() {
                             className="w-full bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-yellow-400 h-12 rounded-md px-4"
                           />
                           {errors.name && (
-                            <p className="text-red-400 text-sm">{errors.name}</p>
+                            <p className="text-red-400 text-sm">
+                              {errors.name}
+                            </p>
                           )}
                         </div>
                         <div className="space-y-3">
-                          <Label htmlFor="email" className="text-white text-base font-medium">
+                          <Label
+                            htmlFor="email"
+                            className="text-white text-base font-medium"
+                          >
                             Email *
                           </Label>
                           <Input
@@ -288,14 +305,19 @@ export default function ContactSection() {
                             className="w-full bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-yellow-400 h-12 rounded-md px-4"
                           />
                           {errors.email && (
-                            <p className="text-red-400 text-sm">{errors.email}</p>
+                            <p className="text-red-400 text-sm">
+                              {errors.email}
+                            </p>
                           )}
                         </div>
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-3">
-                          <Label htmlFor="phone" className="text-white text-base font-medium">
+                          <Label
+                            htmlFor="phone"
+                            className="text-white text-base font-medium"
+                          >
                             Teléfono
                           </Label>
                           <Input
@@ -309,7 +331,10 @@ export default function ContactSection() {
                           />
                         </div>
                         <div className="space-y-3">
-                          <Label htmlFor="company" className="text-white text-base font-medium">
+                          <Label
+                            htmlFor="company"
+                            className="text-white text-base font-medium"
+                          >
                             Empresa
                           </Label>
                           <Input
@@ -323,9 +348,12 @@ export default function ContactSection() {
                           />
                         </div>
                       </div>
-                      
+
                       <div className="space-y-3">
-                        <Label htmlFor="message" className="text-white text-base font-medium">
+                        <Label
+                          htmlFor="message"
+                          className="text-white text-base font-medium"
+                        >
                           Mensaje *
                         </Label>
                         <Textarea
@@ -339,10 +367,12 @@ export default function ContactSection() {
                           className="w-full bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-yellow-400 rounded-md p-4 resize-none"
                         />
                         {errors.message && (
-                          <p className="text-red-400 text-sm">{errors.message}</p>
+                          <p className="text-red-400 text-sm">
+                            {errors.message}
+                          </p>
                         )}
                       </div>
-                      
+
                       <button
                         type="submit"
                         disabled={loading}
@@ -355,7 +385,6 @@ export default function ContactSection() {
                         )}
                         {loading ? "Enviando..." : "Enviar Consulta"}
                       </button>
-                      
                     </form>
                   )}
                 </CardContent>
