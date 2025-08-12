@@ -30,8 +30,8 @@ export default function ContactSection() {
     {
       icon: Mail,
       title: "Email",
-      value: "durex-crom@gmail.com",
-      link: "mailto:durex-crom@gmail.com",
+      value: "durexcrom@gmail.com",
+      link: "mailto:durexcrom@gmail.com",
     },
     {
       icon: MapPin,
@@ -76,7 +76,6 @@ export default function ContactSection() {
     setLoading(true);
     setSuccess(false);
 
-    // Codificamos los datos del formulario
     const encodedData = new URLSearchParams({
       "form-name": "contact",
       ...formData,
@@ -100,7 +99,8 @@ export default function ContactSection() {
           });
           setTimeout(() => setSuccess(false), 5000);
         } else {
-          throw new Error("El envío falló");
+          // Si el estado no es 200, algo salió mal
+          throw new Error(`El envío falló con el estado: ${response.status}`);
         }
       })
       .catch((error) => {
@@ -227,7 +227,6 @@ export default function ContactSection() {
                   >
                     <input type="hidden" name="form-name" value="contact" />
 
-                    {/* Honeypot */}
                     <p className="hidden">
                       <label>
                         No llenar este campo:{" "}
@@ -235,7 +234,6 @@ export default function ContactSection() {
                       </label>
                     </p>
 
-                    {/* Nombre y Email */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-3">
                         <Label
@@ -281,7 +279,6 @@ export default function ContactSection() {
                       </div>
                     </div>
 
-                    {/* Teléfono y Empresa */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-3">
                         <Label
@@ -319,7 +316,6 @@ export default function ContactSection() {
                       </div>
                     </div>
 
-                    {/* Mensaje */}
                     <div className="space-y-3">
                       <Label
                         htmlFor="message"
@@ -342,7 +338,6 @@ export default function ContactSection() {
                       )}
                     </div>
 
-                    {/* Botón con spinner */}
                     <button
                       type="submit"
                       disabled={loading}

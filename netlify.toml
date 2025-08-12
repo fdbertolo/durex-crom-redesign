@@ -1,3 +1,8 @@
 [build]
   command = "npm run build"
   publish = ".next"
+
+[[redirects]]
+  from = "/api/contact"
+  to = "/__forms.html"
+  status = 200
