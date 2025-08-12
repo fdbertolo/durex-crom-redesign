@@ -66,44 +66,15 @@ export default function ContactSection() {
   };
 
   const handleSubmit = (e) => {
-  e.preventDefault();
-  const validationErrors = validateForm();
-  if (Object.keys(validationErrors).length > 0) {
-    setErrors(validationErrors);
-    return;
-  }
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      e.preventDefault();
+      return;
+    }
 
-  setLoading(true);
-  setSuccess(false);
-
-
-  const encodedData = new URLSearchParams({
-    "form-name": "contact",
-    ...formData,
-  }).toString();
-
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: encodedData, 
-  })
-    .then(() => {
-      setLoading(false);
-      setSuccess(true);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        message: "",
-      });
-      setTimeout(() => setSuccess(false), 5000);
-    })
-    .catch((error) => {
-      setLoading(false);
-      alert("Error al enviar: " + error);
-    });
-};
+    setLoading(true);
+  };
 
   return (
     <section
@@ -216,6 +187,7 @@ export default function ContactSection() {
                   <form
                     name="contact"
                     method="POST"
+                    action="/success"
                     data-netlify="true"
                     netlify-honeypot="bot-field"
                     onSubmit={handleSubmit}
@@ -351,14 +323,6 @@ export default function ContactSection() {
                       )}
                       {loading ? "Enviando..." : "Enviar Consulta"}
                     </button>
-
-                    {/* Mensaje de éxito */}
-                    {success && (
-                      <p className="text-green-400 text-sm mt-2">
-                        ¡Formulario enviado con éxito! Pronto nos pondremos en
-                        contacto.
-                      </p>
-                    )}
                   </form>
                 )}
               </CardContent>
