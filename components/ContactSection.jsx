@@ -2,7 +2,15 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle, Loader2 } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Send,
+  CheckCircle,
+  Loader2,
+} from "lucide-react";
 import { Card, CardContent } from "./Card";
 import { Input } from "./Input";
 import { Textarea } from "./Textarea";
@@ -66,44 +74,43 @@ export default function ContactSection() {
   };
 
   const handleSubmit = (e) => {
-  e.preventDefault();
-  const validationErrors = validateForm();
-  if (Object.keys(validationErrors).length > 0) {
-    setErrors(validationErrors);
-    return;
-  }
+    e.preventDefault();
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
 
-  setLoading(true);
-  setSuccess(false);
+    setLoading(true);
+    setSuccess(false);
 
+    const encodedData = new URLSearchParams({
+      "form-name": "contact",
+      ...formData,
+    }).toString();
 
-  const encodedData = new URLSearchParams({
-    "form-name": "contact",
-    ...formData,
-  }).toString();
-
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: encodedData, 
-  })
-    .then(() => {
-      setLoading(false);
-      setSuccess(true);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        message: "",
-      });
-      setTimeout(() => setSuccess(false), 5000);
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encodedData,
     })
-    .catch((error) => {
-      setLoading(false);
-      alert("Error al enviar: " + error);
-    });
-};
+      .then(() => {
+        setLoading(false);
+        setSuccess(true);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          message: "",
+        });
+        setTimeout(() => setSuccess(false), 5000);
+      })
+      .catch((error) => {
+        setLoading(false);
+        alert("Error al enviar: " + error);
+      });
+  };
 
   return (
     <section
@@ -408,11 +415,11 @@ export default function ContactSection() {
 
             <div className="bg-white/5 border-white/10 overflow-hidden rounded-xl shadow-lg">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.771239857962!2d-58.42398502399908!3d-34.69342706037302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccd4d76a5a22d%3A0xd08a7065977926b4!2sEnrique%20Fern%C3%A1ndez%202355%2C%20B1824%20Lan%C3%BAs%20Oeste%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1723405786884!5m2!1ses!2sar"
                 width="100%"
                 height="325"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.4589189556214!2d-58.41496091075092!3d-34.69360319242161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcccf0e104ac5f%3A0xef06a38b905ea75f!2sDurex%20Crom%20SRL!5e0!3m2!1ses-419!2sar!4v1755021650864!5m2!1ses-419!2sar"
               ></iframe>
             </div>
           </motion.div>
