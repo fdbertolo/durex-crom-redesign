@@ -30,8 +30,8 @@ export default function ContactSection() {
     {
       icon: Mail,
       title: "Email",
-      value: "durexcrom@gmail.com",
-      link: "mailto:durexcrom@gmail.com",
+      value: "durex-crom@gmail.com",
+      link: "mailto:durex-crom@gmail.com",
     },
     {
       icon: MapPin,
@@ -64,16 +64,49 @@ export default function ContactSection() {
       newErrors.message = "El mensaje es obligatorio";
     return newErrors;
   };
-
+  
   const handleSubmit = (e) => {
+    e.preventDefault();
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
-      e.preventDefault();
       return;
     }
 
     setLoading(true);
+    setSuccess(false);
+
+    // Codificamos los datos del formulario
+    const encodedData = new URLSearchParams({
+      "form-name": "contact",
+      ...formData,
+    }).toString();
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encodedData,
+    })
+      .then((response) => {
+        if (response.status === 200) {
+          setLoading(false);
+          setSuccess(true);
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            company: "",
+            message: "",
+          });
+          setTimeout(() => setSuccess(false), 5000);
+        } else {
+          throw new Error("El envío falló");
+        }
+      })
+      .catch((error) => {
+        setLoading(false);
+        alert("Error al enviar: " + error.message);
+      });
   };
 
   return (
@@ -187,7 +220,6 @@ export default function ContactSection() {
                   <form
                     name="contact"
                     method="POST"
-                    action="/success"
                     data-netlify="true"
                     netlify-honeypot="bot-field"
                     onSubmit={handleSubmit}
