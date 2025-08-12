@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
-import { motion } from 'motion/react'
-import { Ruler, Gauge, Weight, Star } from 'lucide-react'
-import { Card, CardContent } from './Card'
+import { motion } from "motion/react";
+import { Ruler, Gauge, Weight, Star } from "lucide-react";
+import { Card, CardContent } from "./Card";
 
 export function GrindingSection() {
   const machineSpecs = [
@@ -10,41 +10,45 @@ export function GrindingSection() {
       icon: Ruler,
       label: "Diámetro Máximo",
       value: "Ø630 mm",
-      description: "Capacidad para piezas de gran diámetro"
+      description: "Capacidad para piezas de gran diámetro",
     },
     {
       icon: Ruler,
       label: "Longitud Máxima",
       value: "4000 mm",
-      description: "Hasta 4000mm entre puntas"
+      description: "Hasta 4000mm entre puntas",
     },
     {
       icon: Weight,
       label: "Peso Máximo",
       value: "2,500 Kg",
-      description: "Soporte para componentes pesados"
+      description: "Soporte para componentes pesados",
     },
     {
       icon: Gauge,
       label: "Precisión",
       value: "±0.01 mm",
-      description: "Tolerancias extremadamente precisas"
-    }
-  ]
+      description: "Tolerancias extremadamente precisas",
+    },
+  ];
 
   const processSteps = [
     {
       step: "Rectificado Previo",
-      description: "Prepara el material para el espesor de cromo duro útil requerido",
+      description:
+        "Prepara el material para el espesor de cromo duro útil requerido",
     },
     {
-      step: "Rectificado Final", 
+      step: "Rectificado Final",
       description: "Las piezas quedan perfectamente cilíndricas y concéntricas",
-    }
-  ]
+    },
+  ];
 
   return (
-    <section id="rectificado" className="py-25 w-full bg-[var(--durex-dark)] text-white">
+    <section
+      id="rectificado"
+      className="py-25 w-full bg-[var(--durex-dark)] text-white"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -55,13 +59,17 @@ export function GrindingSection() {
         >
           <div className="inline-flex items-center px-4 py-2 bg-[var(--durex-accent)]/20 border border-[var(--durex-accent)]/30 rounded-full mb-6">
             <Star className="w-4 h-4 text-[var(--durex-accent)] mr-2" />
-            <span className="text-sm text-[var(--durex-accent)] font-medium">Nuestra Especialidad</span>
+            <span className="text-sm text-[var(--durex-accent)] font-medium">
+              Nuestra Especialidad
+            </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Rectificado de <span className="text-[var(--durex-accent)]">Precisión</span>
+            Rectificado de{" "}
+            <span className="text-[var(--durex-accent)]">Precisión</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Mecanizado por abrasión que ofrece mayor precisión dimensional y menores rugosidades que el mecanizado por arranque de viruta.
+            Mecanizado por abrasión que ofrece mayor precisión dimensional y
+            menores rugosidades que el mecanizado por arranque de viruta.
           </p>
         </motion.div>
 
@@ -76,10 +84,13 @@ export function GrindingSection() {
           <div className="bg-gradient-to-br from-[var(--durex-primary)] via-purple-800 to-[var(--durex-primary)] rounded-3xl p-8 md:p-12 relative overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-10">
-              <div className="absolute inset-0" style={{
-                backgroundImage: `linear-gradient(45deg, transparent 45%, #F8BE00 50%, transparent 55%)`,
-                backgroundSize: '20px 20px'
-              }} />
+              <div
+                className="absolute inset-0"
+                style={{
+                  backgroundImage: `linear-gradient(45deg, transparent 45%, #F8BE00 50%, transparent 55%)`,
+                  backgroundSize: "20px 20px",
+                }}
+              />
             </div>
 
             <div className="relative z-10">
@@ -106,7 +117,7 @@ export function GrindingSection() {
                 >
                   <div className="grid grid-cols-1 gap-4">
                     <div className="relative rounded-xl overflow-hidden shadow-lg">
-                      <img 
+                      <img
                         src="https://placedog.net/600/400"
                         alt="Rectificadora TOS HOSTIVAR BUT 63 - Vista frontal"
                         className="w-full h-52 object-cover"
@@ -116,20 +127,22 @@ export function GrindingSection() {
                         <p className="text-sm font-medium">Vista Principal</p>
                       </div>
                     </div>
-                    
+
                     <div className="relative rounded-xl overflow-hidden shadow-lg">
-                      <img 
+                      <img
                         src="https://placedog.net/600/400?random=2"
                         alt="Rectificadora TOS HOSTIVAR BUT 63 - Detalle de precisión"
                         className="w-full h-52 object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                       <div className="absolute bottom-4 left-4 text-white">
-                        <p className="text-sm font-medium">Sistema de Precisión</p>
+                        <p className="text-sm font-medium">
+                          Sistema de Precisión
+                        </p>
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Dimension Indicator */}
                   <div className="bg-[var(--durex-accent)] rounded-lg p-4 shadow-lg text-center">
                     <div className="text-[var(--durex-dark)]">
@@ -146,18 +159,16 @@ export function GrindingSection() {
                       Capacidades Excepcionales
                     </h4>
                     <p className="text-purple-200 text-lg">
-                      Nuestra rectificadora universal nos permite procesar componentes de dimensiones extraordinarias con la máxima precisión.
+                      Nuestra rectificadora universal nos permite procesar
+                      componentes de dimensiones extraordinarias con la máxima
+                      precisión.
                     </p>
                   </div>
 
                   <div className="grid grid-cols-1 gap-4">
                     {machineSpecs.map((spec, index) => (
-                      <motion.div
+                      <div
                         key={index}
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.1 * index }}
                         className="bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-all duration-300"
                       >
                         <div className="flex items-center space-x-4">
@@ -166,13 +177,19 @@ export function GrindingSection() {
                           </div>
                           <div className="flex-1">
                             <div className="flex items-center justify-between mb-1">
-                              <span className="text-purple-200">{spec.label}:</span>
-                              <span className="text-2xl font-bold text-[var(--durex-accent)]">{spec.value}</span>
+                              <span className="text-purple-200">
+                                {spec.label}:
+                              </span>
+                              <span className="text-2xl font-bold text-[var(--durex-accent)]">
+                                {spec.value}
+                              </span>
                             </div>
-                            <p className="text-sm text-purple-300">{spec.description}</p>
+                            <p className="text-sm text-purple-300">
+                              {spec.description}
+                            </p>
                           </div>
                         </div>
-                      </motion.div>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -190,9 +207,10 @@ export function GrindingSection() {
           className="mb-16"
         >
           <h3 className="text-3xl font-bold text-center mb-12">
-            Importancia del <span className="text-[var(--durex-accent)]">Rectificado</span>
+            Importancia del{" "}
+            <span className="text-[var(--durex-accent)]">Rectificado</span>
           </h3>
-          
+
           <div className="grid md:grid-cols-2 gap-8">
             {processSteps.map((step, index) => (
               <motion.div
@@ -231,21 +249,27 @@ export function GrindingSection() {
         >
           <div className="bg-gradient-to-r from-transparent via-[var(--durex-accent)]/20 to-transparent rounded-2xl p-8 md:p-12">
             <h3 className="text-3xl font-bold mb-8">
-              <span className="text-[var(--durex-accent)]">Escala de Nuestras Capacidades</span>
+              <span className="text-[var(--durex-accent)]">
+                Escala de Nuestras Capacidades
+              </span>
             </h3>
-            
+
             {/* Mobile-First Visual Scale */}
             <div className="max-w-4xl mx-auto">
               {/* Desktop Version */}
               <div className="hidden md:block">
                 <div className="relative bg-white/10 rounded-full h-24 flex items-center overflow-hidden">
                   <div className="absolute left-4 text-left">
-                    <div className="text-[var(--durex-accent)] font-bold">0 mm</div>
+                    <div className="text-[var(--durex-accent)] font-bold">
+                      0 mm
+                    </div>
                   </div>
                   <div className="absolute right-4 text-right">
-                    <div className="text-[var(--durex-accent)] font-bold text-2xl">4000 mm</div>
+                    <div className="text-[var(--durex-accent)] font-bold text-2xl">
+                      4000 mm
+                    </div>
                   </div>
-                  
+
                   <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: "100%" }}
@@ -253,10 +277,12 @@ export function GrindingSection() {
                     transition={{ duration: 2, delay: 1 }}
                     className="h-full bg-gradient-to-r from-[var(--durex-accent)] via-yellow-400 to-[var(--durex-accent)] rounded-full"
                   />
-                  
+
                   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <div className="bg-[var(--durex-dark)] rounded-lg px-4 py-2 border-2 border-[var(--durex-accent)]">
-                      <div className="text-[var(--durex-accent)] font-bold">Ø630 mm</div>
+                      <div className="text-[var(--durex-accent)] font-bold">
+                        Ø630 mm
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -266,15 +292,23 @@ export function GrindingSection() {
               <div className="md:hidden space-y-6">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-white/10 rounded-xl p-6 text-center">
-                    <div className="text-3xl font-bold text-[var(--durex-accent)] mb-2">4000</div>
-                    <div className="text-sm text-gray-300">Longitud máxima (mm)</div>
+                    <div className="text-3xl font-bold text-[var(--durex-accent)] mb-2">
+                      4000
+                    </div>
+                    <div className="text-sm text-gray-300">
+                      Longitud máxima (mm)
+                    </div>
                   </div>
                   <div className="bg-white/10 rounded-xl p-6 text-center">
-                    <div className="text-3xl font-bold text-[var(--durex-accent)] mb-2">Ø630</div>
-                    <div className="text-sm text-gray-300">Diámetro máximo (mm)</div>
+                    <div className="text-3xl font-bold text-[var(--durex-accent)] mb-2">
+                      Ø630
+                    </div>
+                    <div className="text-sm text-gray-300">
+                      Diámetro máximo (mm)
+                    </div>
                   </div>
                 </div>
-                
+
                 <div className="bg-white/10 rounded-xl p-6">
                   <motion.div
                     initial={{ width: 0 }}
@@ -285,25 +319,29 @@ export function GrindingSection() {
                   />
                   <div className="flex justify-between mt-2 text-xs text-gray-400">
                     <span>0 mm</span>
-                    <span className="text-[var(--durex-accent)] font-bold">4000 mm</span>
+                    <span className="text-[var(--durex-accent)] font-bold">
+                      4000 mm
+                    </span>
                   </div>
                 </div>
               </div>
-              
+
               <div className="hidden md:flex justify-between items-center mt-6 text-sm text-gray-400">
                 <span>Inicio</span>
-                <span className="text-[var(--durex-accent)] font-bold">Capacidad Máxima: 4000 mm</span>
+                <span className="text-[var(--durex-accent)] font-bold">
+                  Capacidad Máxima: 4000 mm
+                </span>
                 <span>Fin</span>
               </div>
             </div>
-            
+
             <p className="text-xl text-gray-300 mt-8 max-w-2xl mx-auto">
-              Somos líderes en el procesamiento de componentes de gran escala, 
+              Somos líderes en el procesamiento de componentes de gran escala,
               manejando piezas que otros no pueden procesar.
             </p>
           </div>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
