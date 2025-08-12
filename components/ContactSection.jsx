@@ -217,7 +217,6 @@ export default function ContactSection() {
                   </motion.div>
                 ) : (
                   <form
-                    name="contact"
                     onSubmit={handleSubmit}
                     className="space-y-8"
                   >
