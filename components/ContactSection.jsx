@@ -133,6 +133,7 @@ export default function ContactSection() {
                   data-netlify="true"
                   className="space-y-8"
                 >
+                  <input type="hidden" name="form-name" value="contact" />
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-3">
                       <Label
