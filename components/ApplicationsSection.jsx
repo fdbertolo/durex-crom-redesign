@@ -90,7 +90,7 @@ export function ApplicationsSection() {
             <span className="text-sm text-[var(--durex-primary)] font-medium">Versatilidad Industrial</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-[var(--durex-dark)] mb-6">
-            Aplicaciones y <span className="text-[var(--durex-primary)]">Trabajos</span>
+            Aplicaciones y <span className="text-[var(--durex-primary)]">trabajos</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             El cromo duro se utiliza en múltiples industrias, tanto en procesos de fabricación como de recuperación de componentes críticos.
@@ -143,7 +143,7 @@ export function ApplicationsSection() {
           className="mb-20"
         >
           <h3 className="text-3xl font-bold text-center text-[var(--durex-dark)] mb-12">
-            Ejemplos de <span className="text-[var(--durex-primary)]">Nuestros Trabajos</span>
+            Ejemplos de <span className="text-[var(--durex-primary)]">nuestros trabajos</span>
           </h3>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -206,7 +206,7 @@ export function ApplicationsSection() {
           className="mb-16"
         >
           <h3 className="text-3xl font-bold text-center text-[var(--durex-dark)] mb-4">
-            Galería de <span className="text-[var(--durex-primary)]">Trabajos Realizados</span>
+            Galería de <span className="text-[var(--durex-primary)]">trabajos realizados</span>
           </h3>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
             Una muestra de los proyectos y componentes que hemos procesado con éxito para nuestros clientes industriales.
@@ -247,7 +247,7 @@ export function ApplicationsSection() {
         >
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold mb-4">
-              Industrias que <span className="text-[var(--durex-accent)]">Servimos</span>
+              Industrias que <span className="text-[var(--durex-accent)]">servimos</span>
             </h3>
             <p className="text-xl text-purple-200 max-w-2xl mx-auto">
               Nuestros servicios están diseñados para satisfacer las necesidades más exigentes de múltiples sectores industriales.

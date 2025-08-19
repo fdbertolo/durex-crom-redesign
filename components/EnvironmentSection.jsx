@@ -210,7 +210,7 @@ export function EnvironmentSection() {
               href="#contacto"
               className="inline-flex items-center px-8 py-4 bg-[var(--durex-accent)] text-gray-900 rounded-lg font-bold hover:text-[var(--durex-accent)] hover:bg-transparent border-[var(--durex-accent)] border"
             >
-              Conozca Más Sobre Nuestros Procesos
+              Conozca más sobre nuestros procesos
               <ArrowRight className="w-5 h-5 ml-2" />
             </a>
           </div>

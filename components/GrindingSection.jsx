@@ -208,7 +208,7 @@ export function GrindingSection() {
         >
           <h3 className="text-3xl font-bold text-center mb-12">
             Importancia del{" "}
-            <span className="text-[var(--durex-accent)]">Rectificado</span>
+            <span className="text-[var(--durex-accent)]">rectificado</span>
           </h3>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -250,7 +250,7 @@ export function GrindingSection() {
           <div className="bg-gradient-to-r from-transparent via-[var(--durex-accent)]/20 to-transparent rounded-2xl p-8 md:p-12">
             <h3 className="text-3xl font-bold mb-8">
               <span className="text-[var(--durex-accent)]">
-                Escala de Nuestras Capacidades
+                Escala de Nuestras capacidades
               </span>
             </h3>
 

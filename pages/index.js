@@ -18,12 +18,9 @@ export default function Home() {
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0"
           rel="stylesheet"
+          display="swap"
         />
         <meta name="author" content="https://fernandobertolo.netlify.app" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1"
-        />
         <meta
           name="keywords"
           content="Cromo duro, Rectificado, Cromado industrial, Rectificado Universal"

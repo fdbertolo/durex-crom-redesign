@@ -77,7 +77,7 @@ export default function ContactSection() {
                   <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
                     <info.icon className="w-8 h-8 text-gray-900" />
                   </div>
-                  <h4 className="font-bold text-white mb-3">{info.title}</h4>
+                  <h5 className="font-bold text-white mb-3 text-lg">{info.title}</h5>
                   {info.link ? (
                     <a
                       href={info.link}
@@ -202,6 +202,7 @@ export default function ContactSection() {
           >
             <div className="bg-white/5 border-white/10 overflow-hidden rounded-xl shadow-lg">
               <iframe
+                title="Ubicación de Durex Crom"
                 width="100%"
                 height="390"
                 loading="lazy"
