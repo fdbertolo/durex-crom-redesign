@@ -9,7 +9,6 @@ import { GrindingSection } from "@components/GrindingSection";
 import { ApplicationsSection } from "@components/ApplicationsSection";
 import ContactSection from "@components/ContactSection";
 
-
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center relative">

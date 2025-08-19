@@ -102,7 +102,7 @@ export function ChromeSection() {
               {/* Industrial Image */}
               <div className="relative rounded-xl overflow-hidden shadow-lg">
                 <img 
-                  src="https://placedog.net/600/400&random"
+                  src="/images/chrome.png"
                   alt="Proceso de cromado industrial en máquina especializada"
                   className="w-full h-64 object-cover"
                 />

@@ -243,7 +243,7 @@ export function ApplicationsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="bg-gradient-to-br from-[var(--durex-primary)] to-purple-700 rounded-3xl p-8 md:p-12 text-white"
+          className="bg-gradient-to-br from-[var(--durex-dark)] to-[var(--durex-primary)] rounded-3xl p-8 md:p-12 text-white"
         >
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold mb-4">
@@ -256,14 +256,14 @@ export function ApplicationsSection() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {[
-              { name: "Petrolera", image: "https://placedog.net/300/200?random=40" },
-              { name: "Automotriz", image: "https://placedog.net/300/200?random=41" },
-              { name: "Agrícola", image: "https://placedog.net/300/200?random=42" },
-              { name: "Textil", image: "https://placedog.net/300/200?random=43" },
-              { name: "Plástica", image: "https://placedog.net/300/200?random=44" },
-              { name: "Metalúrgica", image: "https://placedog.net/300/200?random=45" },
-              { name: "Alimentaria", image: "https://placedog.net/300/200?random=46" },
-              { name: "Papelera", image: "https://placedog.net/300/200?random=47" }
+              { name: "Petrolera", image: "images/petrolera.png" },
+              { name: "Automotriz", image: "images/automotriz.png" },
+              { name: "Agrícola", image: "images/agricola.png" },
+              { name: "Textil", image: "images/textil.png" },
+              { name: "Plástica", image: "images/plastica.png" },
+              { name: "Metalúrgica", image: "images/metalurgica.png" },
+              { name: "Alimentaria", image: "images/alimentaria.png" },
+              { name: "Papelera", image: "images/papelera.png" }
             ].map((industry, index) => (
               <motion.div
                 key={index}
