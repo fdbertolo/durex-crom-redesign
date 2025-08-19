@@ -77,7 +77,10 @@ export default function ContactSection() {
                   <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
                     <info.icon className="w-8 h-8 text-gray-900" />
                   </div>
-                  <h5 className="font-bold text-white mb-3 text-lg">{info.title}</h5>
+                  {/* Cambiado de h5 a h3 */}
+                  <h3 className="font-bold text-white mb-3 text-lg">
+                    {info.title}
+                  </h3>
                   {info.link ? (
                     <a
                       href={info.link}
@@ -106,9 +109,10 @@ export default function ContactSection() {
 
         <Card className="bg-white/5 border-white/10 rounded-lg mb-8">
           <CardContent className="p-6">
-            <h4 className="text-xl font-bold text-yellow-400 mb-4">
+            {/* Cambiado de h4 a h3 */}
+            <h3 className="text-xl font-bold text-yellow-400 mb-4">
               ¿Por qué elegirnos?
-            </h4>
+            </h3>
             <div className="space-y-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
@@ -160,6 +164,10 @@ export default function ContactSection() {
           >
             <Card className="bg-white/5 border-white/10 rounded-lg">
               <CardContent className="p-8">
+                {/* Cambiado de h3 a h3. Esto no rompe la jerarquía,
+                pero lo ideal sería un h3 si el anterior era h2.
+                Como el h4 fue cambiado a h3, ahora este h3 es consecuente
+                con el orden. */}
                 <h3 className="text-3xl font-bold text-yellow-400 mb-2">
                   Contacto
                 </h3>
@@ -169,23 +177,23 @@ export default function ContactSection() {
                 <div className="flex flex-col gap-4">
                   <a
                     href="mailto:durexcrom@gmail.com"
-                    className="inline-flex items-center px-8 py-4 bg-[var(--durex-accent)] text-gray-900 rounded-lg font-bold hover:text-[var(--durex-accent)] hover:bg-transparent border-[var(--durex-accent)] border"
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--durex-accent)] text-gray-900 rounded-lg font-bold hover:text-[var(--durex-accent)] hover:bg-transparent border-[var(--durex-accent)] border"
                   >
-                    <Mail className="w-8 h-8  mr-4" />
+                    <Mail className="w-8 h-8  mr-4" />
                     Enviar un correo electrónico
                   </a>
                   <a
                     href="https://api.whatsapp.com/send?phone=5491149488179"
-                    className="inline-flex items-center px-8 py-4 bg-[var(--durex-accent)] text-gray-900 rounded-lg font-bold hover:text-[var(--durex-accent)] hover:bg-transparent border-[var(--durex-accent)] border"
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--durex-accent)] text-gray-900 rounded-lg font-bold hover:text-[var(--durex-accent)] hover:bg-transparent border-[var(--durex-accent)] border"
                   >
                     <MessageCircle className="w-8 h-8 mr-4" />
                     Enviar un mensaje de whatsapp
                   </a>
                   <a
                     href="tel:1142626026"
-                    className="inline-flex items-center px-8 py-4 bg-[var(--durex-accent)] text-gray-900 rounded-lg font-bold hover:text-[var(--durex-accent)] hover:bg-transparent border-[var(--durex-accent)] border"
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--durex-accent)] text-gray-900 rounded-lg font-bold hover:text-[var(--durex-accent)] hover:bg-transparent border-[var(--durex-accent)] border"
                   >
-                    <Phone className="w-8 h-8  mr-4" />
+                    <Phone className="w-8 h-8  mr-4" />
                     Hacer una llamada telefónica
                   </a>
                 </div>
