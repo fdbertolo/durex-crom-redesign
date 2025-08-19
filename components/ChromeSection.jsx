@@ -8,19 +8,19 @@ export function ChromeSection() {
   const benefits = [
     {
       icon: HardHat,
-      title: "Bajo Coeficiente de Rozamiento",
+      title: "Bajo coeficiente de rozamiento",
       description: "Reducción significativa de la fricción entre superficies en contacto",
       color: "text-[var(--durex-accent)]"
     },
     {
       icon: Cog,
-      title: "Resistencia al Desgaste y Corrosión",
+      title: "Resistencia al desgaste y corrosión",
       description: "Protección superior contra el deterioro por uso y agentes externos",
       color: "text-[var(--durex-primary)]"
     },
     {
       icon: Gauge,
-      title: "Dureza Excepcional",
+      title: "Dureza excepcional",
       description: "Superficie endurecida que mantiene sus propiedades a lo largo del tiempo",
       color: "text-gray-600"
     }
@@ -61,10 +61,10 @@ export function ChromeSection() {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center px-4 py-2 bg-[var(--durex-primary)]/20 border border-[var(--durex-primary)]/30 rounded-full mb-6">
-            <span className="text-sm text-[var(--durex-primary)] font-medium">Nuestro Proceso</span>
+            <span className="text-sm text-[var(--durex-primary)] font-medium">Nuestro proceso</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-[var(--durex-dark)] mb-6">
-            Recubrimiento de <span className="text-[var(--durex-primary)]">Cromo Duro</span>
+            Recubrimiento de <span className="text-[var(--durex-primary)]">cromo duro</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Proceso electrolítico que recubre un metal con una película de cromo duro, proporcionando características superiores de resistencia y durabilidad.
@@ -82,7 +82,7 @@ export function ChromeSection() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="text-3xl font-bold text-[var(--durex-dark)] mb-6">
-                ¿Qué es el Cromo Duro?
+                ¿Qué es el cromo duro?
               </h3>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
                 El cromado duro es un proceso electrolítico especializado que deposita una capa de cromo metálico sobre la superficie de las piezas, transformando sus propiedades mecánicas y químicas.
@@ -91,7 +91,7 @@ export function ChromeSection() {
                 Esta técnica proporciona una dureza superficial excepcional (800-1000 HV), resistencia al desgaste y propiedades anti-corrosivas que extienden significativamente la vida útil de los componentes.
               </p>
               <div className="bg-[var(--durex-primary)]/5 border-l-4 border-[var(--durex-primary)] p-6 rounded-r-lg">
-                <h4 className="font-bold text-[var(--durex-primary)] mb-2">Tecnología Avanzada</h4>
+                <h4 className="font-bold text-[var(--durex-primary)] mb-2">Tecnología avanzada</h4>
                 <p className="text-gray-700">
                   Utilizamos equipos de última generación y técnicas probadas para garantizar un recubrimiento uniforme y de máxima calidad en cada pieza.
                 </p>
@@ -108,13 +108,13 @@ export function ChromeSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm font-medium">Proceso Industrial de Cromado</p>
+                  <p className="text-sm font-medium">Proceso industrial de cromado</p>
                 </div>
               </div>
 
               {/* Process Steps */}
               <div className="bg-gradient-to-br from-[var(--durex-primary)] to-purple-700 rounded-xl p-6 text-white">
-                <h4 className="text-lg font-bold mb-4 text-center">Proceso Electrolítico</h4>
+                <h4 className="text-lg font-bold mb-4 text-center">Proceso electrolítico</h4>
                 
                 <div className="space-y-3">
                   <div className="flex items-center p-3 bg-white/10 rounded-lg">
@@ -156,7 +156,7 @@ export function ChromeSection() {
           className="mb-16"
         >
           <h3 className="text-3xl font-bold text-center text-[var(--durex-dark)] mb-12">
-            Beneficios del <span className="text-[var(--durex-primary)]">Cromo Duro</span>
+            Beneficios del <span className="text-[var(--durex-primary)]">cromo duro</span>
           </h3>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -194,7 +194,7 @@ export function ChromeSection() {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <h3 className="text-3xl font-bold text-center text-[var(--durex-dark)] mb-12">
-            Acabados <span className="text-[var(--durex-primary)]">Disponibles</span>
+            Acabados <span className="text-[var(--durex-primary)]">disponibles</span>
           </h3>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -247,7 +247,7 @@ export function ChromeSection() {
         >
           <div className="bg-[var(--durex-primary)] rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">
-              ¿Necesita Recubrimiento de Cromo Duro?
+              ¿Necesita recubrimiento de cromo duro?
             </h3>
             <p className="text-lg text-purple-200 mb-6">
               Contáctenos para conocer cómo podemos mejorar las propiedades de sus componentes metálicos
@@ -258,7 +258,7 @@ export function ChromeSection() {
               asChild
             >
               <a href="#contacto" className="w-full bg-[var(--durex-accent)] cursor-pointer hover:text-[var(--durex-accent)] hover:bg-transparent border-[var(--durex-accent)] border text-gray-900 px-6 py-3 rounded-md font-semibold transition-colors gap-2 flex items-center justify-center text-center no-underline">
-                Solicitar Cotización
+                Solicitar cotización
                 <ArrowRight className="w-5 h-5 ml-2" />
               </a>
             </button>

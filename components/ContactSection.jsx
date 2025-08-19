@@ -49,7 +49,7 @@ export default function ContactSection() {
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Solicite su <span className="text-yellow-400">Cotización</span>
+            Solicite su <span className="text-yellow-400">cotización</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Estamos listos para atender sus proyectos de gran formato. <br />

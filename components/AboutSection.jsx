@@ -42,11 +42,11 @@ export function AboutSection() {
         >
           <div className="inline-flex items-center px-4 py-2 bg-[var(--durex-primary)]/10 border border-[var(--durex-primary)]/20 rounded-full mb-6">
             <span className="text-sm text-[var(--durex-primary)] font-medium">
-              Sobre Nosotros
+              Sobre nosotros
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-[var(--durex-dark)] mb-6">
-            Experiencia y <span className="text-[var(--durex-primary)]">Excelencia</span>
+            Experiencia y <span className="text-[var(--durex-primary)]">excelencia</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Durex Crom es un establecimiento metalúrgico especializado en

@@ -40,10 +40,10 @@ export function EnvironmentSection() {
         >
           <div className="inline-flex items-center px-4 py-2 bg-green-200/50 border border-green-300/50 rounded-full mb-6">
             <Leaf className="w-4 h-4 text-green-700 mr-2" />
-            <span className="text-sm text-green-700 font-medium">Compromiso Ambiental</span>
+            <span className="text-sm text-green-700 font-medium">Compromiso ambiental</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Cuidado <span className="text-green-600">Ambiental</span>
+            Cuidado <span className="text-green-600">ambiental</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Innovación y sostenibilidad: nuestro compromiso con el medio ambiente a través de tecnología avanzada y procesos responsables.

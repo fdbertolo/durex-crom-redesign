@@ -8,19 +8,19 @@ export function GrindingSection() {
   const machineSpecs = [
     {
       icon: Ruler,
-      label: "Diámetro Máximo",
+      label: "Diámetro máximo",
       value: "Ø630 mm",
       description: "Capacidad para piezas de gran diámetro",
     },
     {
       icon: Ruler,
-      label: "Longitud Máxima",
+      label: "Longitud máxima",
       value: "4000 mm",
       description: "Hasta 4000mm entre puntas",
     },
     {
       icon: Weight,
-      label: "Peso Máximo",
+      label: "Peso máximo",
       value: "2,500 Kg",
       description: "Soporte para componentes pesados",
     },
@@ -34,12 +34,12 @@ export function GrindingSection() {
 
   const processSteps = [
     {
-      step: "Rectificado Previo",
+      step: "Rectificado previo",
       description:
         "Prepara el material para el espesor de cromo duro útil requerido",
     },
     {
-      step: "Rectificado Final",
+      step: "Rectificado final",
       description: "Las piezas quedan perfectamente cilíndricas y concéntricas",
     },
   ];
@@ -60,12 +60,12 @@ export function GrindingSection() {
           <div className="inline-flex items-center px-4 py-2 bg-[var(--durex-accent)]/20 border border-[var(--durex-accent)]/30 rounded-full mb-6">
             <Star className="w-4 h-4 text-[var(--durex-accent)] mr-2" />
             <span className="text-sm text-[var(--durex-accent)] font-medium">
-              Nuestra Especialidad
+              Nuestra especialidad
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Rectificado de{" "}
-            <span className="text-[var(--durex-accent)]">Precisión</span>
+            <span className="text-[var(--durex-accent)]">precisión</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Mecanizado por abrasión que ofrece mayor precisión dimensional y
@@ -96,10 +96,10 @@ export function GrindingSection() {
             <div className="relative z-10">
               <div className="text-center mb-12">
                 <span className="bg-[var(--durex-accent)] text-[var(--durex-dark)] mb-6 text-lg px-6 py-2 font-bold rounded-full">
-                  Tecnología Líder en la Industria
+                  Tecnología líder en la industria
                 </span>
                 <h3 className="text-3xl md:text-4xl font-bold mb-4 mt-6">
-                  Rectificadora Universal de Precisión
+                  Rectificadora universal de precisión
                 </h3>
                 <p className="text-xl text-purple-200">
                   Capacidades excepcionales para componentes de gran escala
@@ -137,7 +137,7 @@ export function GrindingSection() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                       <div className="absolute bottom-4 left-4 text-white">
                         <p className="text-sm font-medium">
-                          Sistema de Precisión
+                          Sistema de precisión
                         </p>
                       </div>
                     </div>
@@ -147,7 +147,7 @@ export function GrindingSection() {
                   <div className="bg-[var(--durex-accent)] rounded-lg p-4 shadow-lg text-center">
                     <div className="text-[var(--durex-dark)]">
                       <div className="text-2xl font-bold">4000mm</div>
-                      <div className="text-sm">Longitud Máxima</div>
+                      <div className="text-sm">Longitud máxima</div>
                     </div>
                   </div>
                 </motion.div>
@@ -156,7 +156,7 @@ export function GrindingSection() {
                 <div className="space-y-6">
                   <div className="mb-8">
                     <h4 className="text-2xl font-bold text-[var(--durex-accent)] mb-4">
-                      Capacidades Excepcionales
+                      Capacidades excepcionales
                     </h4>
                     <p className="text-purple-200 text-lg">
                       Nuestra rectificadora universal nos permite procesar
@@ -250,7 +250,7 @@ export function GrindingSection() {
           <div className="bg-gradient-to-r from-transparent via-[var(--durex-accent)]/20 to-transparent rounded-2xl p-8 md:p-12">
             <h3 className="text-3xl font-bold mb-8">
               <span className="text-[var(--durex-accent)]">
-                Escala de Nuestras capacidades
+                Escala de nuestras capacidades
               </span>
             </h3>
 
@@ -329,7 +329,7 @@ export function GrindingSection() {
               <div className="hidden md:flex justify-between items-center mt-6 text-sm text-gray-400">
                 <span>Inicio</span>
                 <span className="text-[var(--durex-accent)] font-bold">
-                  Capacidad Máxima: 4000 mm
+                  Capacidad máxima: 4000 mm
                 </span>
                 <span>Fin</span>
               </div>

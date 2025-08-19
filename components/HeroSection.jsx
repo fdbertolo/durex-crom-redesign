@@ -60,8 +60,8 @@ export default function HeroSection() {
               {/* Main Heading */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
                 Expertos en{" "}
-                <span className="text-[var(--durex-accent)]">Cromo duro</span> y{" "}
-                <span className="text-[var(--durex-accent)]">Rectificado</span>
+                <span className="text-[var(--durex-accent)]">cromo duro</span> y{" "}
+                <span className="text-[var(--durex-accent)]">rectificado</span>
               </h1>
               {/* Feature Box */}
               <div className="bg-zinc-900/50 border-l-4 border-[var(--durex-accent)] p-6 my-8 max-w-2xl">
@@ -84,7 +84,7 @@ export default function HeroSection() {
                   href="#contacto"
                   className="w-full bg-[var(--durex-accent)] cursor-pointer hover:text-[var(--durex-accent)] hover:bg-transparent border-[var(--durex-accent)] border text-gray-900 px-6 py-3 rounded-md font-semibold transition-colors gap-2 flex items-center justify-center text-center no-underline"
                 >
-                  Cotice su Proyecto
+                  Cotice su proyecto
                   <span className="material-symbols-outlined">
                   east
                 </span>

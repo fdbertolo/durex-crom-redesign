@@ -5,10 +5,10 @@ export const Navigation = ({ dataId }) => {
   const [isOpen, setIsOpen] = useState(false);
   const menuItems = [
     "Nosotros",
-    "Cromo Duro",
+    "Cromo duro",
     "Rectificado",
     "Aplicaciones",
-    "Cuidado Ambiental",
+    "Cuidado ambiental",
     "Contacto",
   ];
   return (

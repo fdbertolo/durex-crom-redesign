@@ -87,7 +87,7 @@ export function ApplicationsSection() {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center px-4 py-2 bg-[var(--durex-primary)]/10 border border-[var(--durex-primary)]/20 rounded-full mb-6">
-            <span className="text-sm text-[var(--durex-primary)] font-medium">Versatilidad Industrial</span>
+            <span className="text-sm text-[var(--durex-primary)] font-medium">Versatilidad industrial</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-[var(--durex-dark)] mb-6">
             Aplicaciones y <span className="text-[var(--durex-primary)]">trabajos</span>
@@ -306,7 +306,7 @@ export function ApplicationsSection() {
                 href="#contacto"
                 className="mx-auto w-fit bg-[var(--durex-accent)] cursor-pointer hover:text-[var(--durex-accent)] hover:bg-transparent border-[var(--durex-accent)] border text-gray-900 px-6 py-3 rounded-md font-semibold transition-colors gap-2 flex items-center justify-center text-center no-underline"
               >
-                Consultar Aplicación Específica
+                Consultar aplicación específica
                 <ArrowRight className="w-5 h-5 ml-2" />
               </a>
             </motion.div>
