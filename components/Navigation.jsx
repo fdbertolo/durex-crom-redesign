@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Menu, X, Phone, MessageCircle } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 export const Navigation = ({ dataId }) => {
   const [isOpen, setIsOpen] = useState(false);

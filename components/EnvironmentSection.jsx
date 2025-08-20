@@ -1,35 +1,50 @@
-'use client'
+"use client";
 
-import { motion } from 'motion/react'
-import { Leaf, Recycle, Shield, Droplets, Award, ArrowRight } from 'lucide-react'
-import { Card, CardContent } from './Card'
+import Image from "next/image"; // Importa el componente Image
+import { motion } from "framer-motion";
+import {
+  Leaf,
+  Recycle,
+  Shield,
+  Droplets,
+  Award,
+  ArrowRight,
+} from "lucide-react";
+import { Card, CardContent } from "./Card";
 
 export function EnvironmentSection() {
   const environmentalFeatures = [
     {
       icon: Droplets,
       title: "Planta de Tratamiento",
-      description: "Tratamiento especializado para efluentes líquidos generados durante el proceso productivo"
+      description:
+        "Tratamiento especializado para efluentes líquidos generados durante el proceso productivo",
     },
     {
       icon: Shield,
       title: "Cumplimiento ACUMAR",
-      description: "Diseñada según los nuevos requerimientos de control ambiental de ACUMAR"
+      description:
+        "Diseñada según los nuevos requerimientos de control ambiental de ACUMAR",
     },
     {
       icon: Recycle,
       title: "Circuito Cerrado",
-      description: "Los efluentes son reutilizados en nuestro circuito cerrado de diseño innovador"
+      description:
+        "Los efluentes son reutilizados en nuestro circuito cerrado de diseño innovador",
     },
     {
       icon: Leaf,
       title: "Vuelco Cero",
-      description: "Logramos actualmente un sistema de vuelco cero al medio ambiente"
-    }
-  ]
+      description:
+        "Logramos actualmente un sistema de vuelco cero al medio ambiente",
+    },
+  ];
 
   return (
-    <section className="py-24 w-full bg-gradient-to-br from-green-50 to-emerald-100" id='cuidado-ambiental'>
+    <section
+      className="py-24 w-full bg-gradient-to-br from-green-50 to-emerald-100"
+      id="cuidado-ambiental"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -40,13 +55,16 @@ export function EnvironmentSection() {
         >
           <div className="inline-flex items-center px-4 py-2 bg-green-200/50 border border-green-300/50 rounded-full mb-6">
             <Leaf className="w-4 h-4 text-green-700 mr-2" />
-            <span className="text-sm text-green-700 font-medium">Compromiso ambiental</span>
+            <span className="text-sm text-green-700 font-medium">
+              Compromiso ambiental
+            </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Cuidado <span className="text-green-600">ambiental</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Innovación y sostenibilidad: nuestro compromiso con el medio ambiente a través de tecnología avanzada y procesos responsables.
+            Innovación y sostenibilidad: nuestro compromiso con el medio
+            ambiente a través de tecnología avanzada y procesos responsables.
           </p>
         </motion.div>
 
@@ -61,31 +79,39 @@ export function EnvironmentSection() {
             <div className="space-y-8">
               <div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-6">
-                  Tecnología ambiental <span className="text-green-600">avanzada</span>
+                  Tecnología ambiental{" "}
+                  <span className="text-green-600">avanzada</span>
                 </h3>
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  Durex Crom cuenta con una planta de tratamiento especializada para los efluentes líquidos 
-                  generados durante el proceso productivo, diseñada con la más alta tecnología ambiental.
+                  Durex Crom cuenta con una planta de tratamiento especializada
+                  para los efluentes líquidos generados durante el proceso
+                  productivo, diseñada con la más alta tecnología ambiental.
                 </p>
                 <div className="bg-green-100 border-l-4 border-green-500 p-6 rounded-r-lg">
-                  <h4 className="font-bold text-green-800 mb-2">Cumplimiento Normativo</h4>
+                  <h4 className="font-bold text-green-800 mb-2">
+                    Cumplimiento Normativo
+                  </h4>
                   <p className="text-green-700">
-                    Nuestra planta está diseñada según los nuevos requerimientos de control ambiental de <b>ACUMAR</b>, 
-                    garantizando el máximo nivel de protección ambiental.
+                    Nuestra planta está diseñada según los nuevos requerimientos
+                    de control ambiental de <b>ACUMAR</b>, garantizando el
+                    máximo nivel de protección ambiental.
                   </p>
                 </div>
               </div>
 
               <div className="bg-white rounded-xl p-6 shadow-lg">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                     <Award className="w-6 h-6 text-green-700" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-2">Resultado Innovador</h4>
+                    <h4 className="font-bold text-gray-900 mb-2">
+                      Resultado Innovador
+                    </h4>
                     <p className="text-gray-700">
-                      "Pasivamos y neutralizamos cualquier tipo de contaminante" logrando un enfoque 
-                      moderno y completamente responsable con el medio ambiente.
+                      "Pasivamos y neutralizamos cualquier tipo de contaminante"
+                      logrando un enfoque moderno y completamente responsable
+                      con el medio ambiente.
                     </p>
                   </div>
                 </div>
@@ -99,24 +125,25 @@ export function EnvironmentSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-
           >
             <div className="bg-gradient-to-br from-green-600 to-emerald-700 rounded-3xl p-8 text-white overflow-hidden">
-
-
               <div className="">
                 <div className="text-center mb-8">
                   <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Recycle className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-2">Sistema de Circuito Cerrado</h3>
-                  <p className="text-green-200">Proceso de reutilización ambiental</p>
+                  <h3 className="text-2xl font-bold mb-2">
+                    Sistema de Circuito Cerrado
+                  </h3>
+                  <p className="text-green-200">
+                    Proceso de reutilización ambiental
+                  </p>
                 </div>
 
                 {/* Process Flow */}
                 <div className="space-y-4">
                   <div className="flex items-center p-4 bg-white/10 rounded-lg">
-                    <div className="w-8 h-8 bg-[var(--durex-accent)] rounded-full flex items-center justify-center mr-3">
+                    <div className="w-8 h-8  bg-[var(--durex-accent)] rounded-full flex items-center justify-center mr-3">
                       <span className="text-gray-900 font-bold text-sm">1</span>
                     </div>
                     <span>Generación de efluentes</span>
@@ -140,8 +167,7 @@ export function EnvironmentSection() {
                     <span>Reutilización en circuito</span>
                   </div>
                 </div>
-
-                            </div>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -192,21 +218,24 @@ export function EnvironmentSection() {
               <Leaf className="w-10 h-10 text-gray-900" />
             </div>
             <h3 className="text-3xl md:text-4xl font-bold mb-6">
-              Responsabilidad ambiental e <span className="text-[var(--durex-accent)]">innovación</span>
+              Responsabilidad ambiental e{" "}
+              <span className="text-[var(--durex-accent)]">innovación</span>
             </h3>
             <p className="text-xl text-purple-200 mb-8 leading-relaxed">
-              Nos enorgullece ser pioneros en sostenibilidad industrial, combinando excelencia técnica 
-              con un compromiso inquebrantable hacia la protección del medio ambiente.
+              Nos enorgullece ser pioneros en sostenibilidad industrial,
+              combinando excelencia técnica con un compromiso inquebrantable
+              hacia la protección del medio ambiente.
             </p>
             <div className="bg-white/10 rounded-xl p-6 mb-8">
               <div className="text-2xl font-bold text-[var(--durex-accent)] mb-2">
                 VUELCO CERO AL MEDIO AMBIENTE
               </div>
               <p className="text-purple-200">
-                Un logro que demuestra nuestro compromiso con las futuras generaciones
+                Un logro que demuestra nuestro compromiso con las futuras
+                generaciones
               </p>
             </div>
-            <a 
+            <a
               href="#contacto"
               className="inline-flex items-center px-8 py-4 bg-[var(--durex-accent)] text-gray-900 rounded-lg font-bold hover:text-[var(--durex-accent)] hover:bg-transparent border-[var(--durex-accent)] border"
             >
@@ -217,5 +246,5 @@ export function EnvironmentSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

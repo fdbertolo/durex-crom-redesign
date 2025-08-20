@@ -3,6 +3,7 @@
 import MetallicPaint, { parseLogoImage } from "@components/MetallicPaint";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { ArrowRight, Shield } from 'lucide-react';
 
 export default function HeroSection() {
   const [imageData, setImageData] = useState(false);
@@ -71,9 +72,7 @@ export default function HeroSection() {
           <div className="text-white">
             <div className="max-w-7xl mx-auto">
               <div className="inline-flex items-center gap-2 bg-yellow-900/30 text-[var(--durex-accent)] px-4 py-2 rounded-full text-sm mb-8">
-                <span className="material-symbols-outlined text-[var(--durex-accent)]">
-                  shield
-                </span>
+                <Shield className="text-[var(--durex-accent)]" />
                 Más de 30 años de experiencia
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
@@ -100,7 +99,7 @@ export default function HeroSection() {
                   className="w-full bg-[var(--durex-accent)] cursor-pointer hover:text-[var(--durex-accent)] hover:bg-transparent border-[var(--durex-accent)] border text-gray-900 px-6 py-3 rounded-md font-semibold transition-colors gap-2 flex items-center justify-center text-center no-underline"
                 >
                   Cotice su proyecto
-                  <span className="material-symbols-outlined">east</span>
+                  <ArrowRight />
                 </a>
                 <a
                   href="#aplicaciones"

@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "motion/react";
+import Image from "next/image";
+import { motion } from "framer-motion";
 import { Ruler, Gauge, Weight, Star } from "lucide-react";
 import { Card, CardContent } from "./Card";
 
@@ -117,10 +118,12 @@ export function GrindingSection() {
                 >
                   <div className="grid grid-cols-1 gap-4">
                     <div className="relative rounded-xl overflow-hidden shadow-lg">
-                      <img
-                        src="https://placedog.net/600/400"
+                      <Image
+                        src="/images/chrome.png"
                         alt="Rectificadora TOS HOSTIVAR BUT 63 - Vista frontal"
-                        className="w-full h-52 object-cover"
+                        className="w-full object-cover h-56"
+                        width={600}
+                        height={208}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                       <div className="absolute bottom-4 left-4 text-white">
@@ -129,10 +132,12 @@ export function GrindingSection() {
                     </div>
 
                     <div className="relative rounded-xl overflow-hidden shadow-lg">
-                      <img
-                        src="https://placedog.net/600/400?random=2"
+                      <Image
+                        src="/images/chrome.png"
                         alt="Rectificadora TOS HOSTIVAR BUT 63 - Detalle de precisión"
-                        className="w-full h-52 object-cover"
+                        className="w-full object-cover h-56"
+                        width={600}
+                        height={208}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                       <div className="absolute bottom-4 left-4 text-white">

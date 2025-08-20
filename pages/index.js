@@ -1,13 +1,39 @@
 import Head from "next/head";
+import dynamic from "next/dynamic";
 import Footer from "@components/Footer";
 import HeroSection from "@components/HeroSection";
-import { AboutSection } from "@components/AboutSection";
-import { EnvironmentSection } from "@components/EnvironmentSection";
 import { Navigation } from "@components/Navigation";
-import { ChromeSection } from "@components/ChromeSection";
-import { GrindingSection } from "@components/GrindingSection";
-import { ApplicationsSection } from "@components/ApplicationsSection";
-import ContactSection from "@components/ContactSection";
+
+const AboutSection = dynamic(
+  () => import("@components/AboutSection").then((mod) => mod.AboutSection),
+  { ssr: false }
+);
+const ChromeSection = dynamic(
+  () => import("@components/ChromeSection").then((mod) => mod.ChromeSection),
+  { ssr: false }
+);
+const GrindingSection = dynamic(
+  () => import("@components/GrindingSection").then((mod) => mod.GrindingSection),
+  { ssr: false }
+);
+const ApplicationsSection = dynamic(
+  () =>
+    import("@components/ApplicationsSection").then(
+      (mod) => mod.ApplicationsSection
+    ),
+  { ssr: false }
+);
+const EnvironmentSection = dynamic(
+  () =>
+    import("@components/EnvironmentSection").then(
+      (mod) => mod.EnvironmentSection
+    ),
+  { ssr: false }
+);
+const ContactSection = dynamic(
+  () => import("@components/ContactSection"),
+  { ssr: false }
+);
 
 export default function Home() {
   return (
@@ -17,7 +43,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.svg" />
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0"
-          rel="stylesheet"
+          rel="preconnect"
           display="swap"
         />
         <meta name="author" content="https://fernandobertolo.netlify.app" />
