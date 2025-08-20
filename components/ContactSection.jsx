@@ -25,7 +25,7 @@ export default function ContactSection() {
     {
       icon: Clock,
       title: "Horarios",
-      value: "Lunes - Viernes: 08 a 12.30 y 13.30 a 17hs",
+      value: "Lunes - Viernes: 08 a 12:00 y 13:30 a 16hs",
       link: null,
     },
   ];
@@ -45,14 +45,14 @@ export default function ContactSection() {
         >
           <div className="inline-flex items-center px-4 py-2 bg-yellow-500/20 border border-yellow-500/30 rounded-full mb-6">
             <span className="text-sm text-yellow-400 font-medium">
-              Contáctenos
+              Contacto
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Solicite su <span className="text-yellow-400">cotización</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Estamos listos para atender sus proyectos de gran formato. <br />
+            Estamos listos para atender y asesorar sus proyectos. <br />
             Contáctenos para una consulta personalizada.
           </p>
         </motion.div>
@@ -123,13 +123,13 @@ export default function ContactSection() {
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-gray-300 text-sm">
-                  Capacidad única para piezas hasta 4 metros
+                  Capacidad única para piezas de hasta 4000 mm
                 </p>
               </div>
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-gray-300 text-sm">
-                  Compromiso con vuelco cero al medio ambiente
+                  Compromiso responsable con el medio ambiente
                 </p>
               </div>
               <div className="flex items-start space-x-3">
@@ -179,7 +179,7 @@ export default function ContactSection() {
                     href="mailto:durexcrom@gmail.com"
                     className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--durex-accent)] text-gray-900 rounded-lg font-bold hover:text-[var(--durex-accent)] hover:bg-transparent border-[var(--durex-accent)] border"
                   >
-                    <Mail className="w-8 h-8  mr-4" />
+                    <Mail className="w-8 h-8 mr-4" />
                     Enviar un correo electrónico
                   </a>
                   <a
@@ -193,7 +193,7 @@ export default function ContactSection() {
                     href="tel:1142626026"
                     className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--durex-accent)] text-gray-900 rounded-lg font-bold hover:text-[var(--durex-accent)] hover:bg-transparent border-[var(--durex-accent)] border"
                   >
-                    <Phone className="w-8 h-8  mr-4" />
+                    <Phone className="w-8 h-8 mr-4" />
                     Hacer una llamada telefónica
                   </a>
                 </div>

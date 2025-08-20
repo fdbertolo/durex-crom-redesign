@@ -122,7 +122,7 @@ export function ChromeSection() {
                 <Image
                   src="/images/chrome.png"
                   alt="Proceso de cromado industrial en máquina especializada"
-                  className="w-full object-cover"
+                  className="w-full object-cover h-64"
                   width={600} // Valor estimado para mantener la proporción de h-64
                   height={256} // Altura de 256px para h-64 (256/16 = 16rem = 64px de Tailwind)
                 />
@@ -220,7 +220,7 @@ export function ChromeSection() {
         </motion.div>
 
         {/* Enhanced Finishes */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -275,7 +275,7 @@ export function ChromeSection() {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* CTA */}
         <motion.div

@@ -95,15 +95,12 @@ export function GrindingSection() {
             </div>
 
             <div className="relative z-10">
-              <div className="text-center mb-12">
-                <span className="bg-[var(--durex-accent)] text-[var(--durex-dark)] mb-6 text-lg px-6 py-2 font-bold rounded-full">
-                  Tecnología líder en la industria
-                </span>
-                <h3 className="text-3xl md:text-4xl font-bold mb-4 mt-6">
-                  Rectificadora universal de precisión
+              <div className="text-center mb-12 flex flex-col items-center">
+                <h3 className="bg-[var(--durex-accent)] text-[var(--durex-dark)] mb-6 text-lg px-6 py-2 font-bold rounded-full w-fit">
+                  Rectificadora universal
                 </h3>
                 <p className="text-xl text-purple-200">
-                  Capacidades excepcionales para componentes de gran escala
+                  Contamos con una rectificadora <b>TOS HOSTIVAR BUT 63</b> 
                 </p>
               </div>
 
@@ -165,7 +162,7 @@ export function GrindingSection() {
                     </h4>
                     <p className="text-purple-200 text-lg">
                       Nuestra rectificadora universal nos permite procesar
-                      componentes de dimensiones extraordinarias con la máxima
+                      piezas de dimensiones extraordinarias con la máxima
                       precisión.
                     </p>
                   </div>
@@ -244,108 +241,6 @@ export function GrindingSection() {
           </div>
         </motion.div>
 
-        {/* Enhanced Scale Visualization - Mobile Friendly */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-center"
-        >
-          <div className="bg-gradient-to-r from-transparent via-[var(--durex-accent)]/20 to-transparent rounded-2xl p-8 md:p-12">
-            <h3 className="text-3xl font-bold mb-8">
-              <span className="text-[var(--durex-accent)]">
-                Escala de nuestras capacidades
-              </span>
-            </h3>
-
-            {/* Mobile-First Visual Scale */}
-            <div className="max-w-4xl mx-auto">
-              {/* Desktop Version */}
-              <div className="hidden md:block">
-                <div className="relative bg-white/10 rounded-full h-24 flex items-center overflow-hidden">
-                  <div className="absolute left-4 text-left">
-                    <div className="text-[var(--durex-accent)] font-bold">
-                      0 mm
-                    </div>
-                  </div>
-                  <div className="absolute right-4 text-right">
-                    <div className="text-[var(--durex-accent)] font-bold text-2xl">
-                      4000 mm
-                    </div>
-                  </div>
-
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: "100%" }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 2, delay: 1 }}
-                    className="h-full bg-gradient-to-r from-[var(--durex-accent)] via-yellow-400 to-[var(--durex-accent)] rounded-full"
-                  />
-
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <div className="bg-[var(--durex-dark)] rounded-lg px-4 py-2 border-2 border-[var(--durex-accent)]">
-                      <div className="text-[var(--durex-accent)] font-bold">
-                        Ø630 mm
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Mobile Version */}
-              <div className="md:hidden space-y-6">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-white/10 rounded-xl p-6 text-center">
-                    <div className="text-3xl font-bold text-[var(--durex-accent)] mb-2">
-                      4000
-                    </div>
-                    <div className="text-sm text-gray-300">
-                      Longitud máxima (mm)
-                    </div>
-                  </div>
-                  <div className="bg-white/10 rounded-xl p-6 text-center">
-                    <div className="text-3xl font-bold text-[var(--durex-accent)] mb-2">
-                      Ø630
-                    </div>
-                    <div className="text-sm text-gray-300">
-                      Diámetro máximo (mm)
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-white/10 rounded-xl p-6">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: "100%" }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 2, delay: 1 }}
-                    className="h-4 bg-gradient-to-r from-[var(--durex-accent)] via-yellow-400 to-[var(--durex-accent)] rounded-full"
-                  />
-                  <div className="flex justify-between mt-2 text-xs text-gray-400">
-                    <span>0 mm</span>
-                    <span className="text-[var(--durex-accent)] font-bold">
-                      4000 mm
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="hidden md:flex justify-between items-center mt-6 text-sm text-gray-400">
-                <span>Inicio</span>
-                <span className="text-[var(--durex-accent)] font-bold">
-                  Capacidad máxima: 4000 mm
-                </span>
-                <span>Fin</span>
-              </div>
-            </div>
-
-            <p className="text-xl text-gray-300 mt-8 max-w-2xl mx-auto">
-              Somos líderes en el procesamiento de componentes de gran escala,
-              manejando piezas que otros no pueden procesar.
-            </p>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

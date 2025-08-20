@@ -20,7 +20,13 @@ export const Navigation = ({ dataId }) => {
         <div className="flex justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <img src="/logo-h-c.svg" alt="Durex Crom" className="h-8 w-auto" />
+            <a href="#hero">
+              <img
+                src="/logo-h-c.svg"
+                alt="Durex Crom"
+                className="h-8 w-auto"
+              />
+            </a>
           </div>
           {/* Mobile menu button */}
           <div className="flex items-center md:hidden">

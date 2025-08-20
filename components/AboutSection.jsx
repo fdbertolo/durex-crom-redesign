@@ -21,13 +21,12 @@ export function AboutSection() {
               </span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-[var(--durex-dark)] mb-6">
-              Experiencia y <span className="text-[var(--durex-primary)]">excelencia</span>
+              Experiencia y{" "}
+              <span className="text-[var(--durex-primary)]">expertise</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Durex Crom es un establecimiento metalúrgico especializado en
-              recubrimientos de <b>cromo duro y rectificado universal</b>, con un
-              crecimiento sostenido basado en la calidad de excelencia de nuestros
-              trabajos.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto text-balance">
+              Durex Crom es un establecimiento industrial integral especializado en
+              recubrimientos de <b>cromo duro y rectificado universal</b>.
             </p>
           </motion.div>
         </div>
@@ -40,15 +39,16 @@ export function AboutSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div>
+              <div className="mb-8">
                 <h3 className="text-2xl font-bold text-[var(--durex-dark)] mb-4">
                   Trayectoria en el mercado de galvanoplastia
                 </h3>
                 <p className="text-gray-700 text-lg leading-relaxed">
-                  Fundada a finales de 1992, hemos construido una sólida
-                  reputación en el sector industrial gracias a nuestro
-                  compromiso inquebrantable con la calidad y la innovación
-                  tecnológica.
+                  La empresa fue fundada a finales del año 1992 y siempre se
+                  caracterizo por la calidad de excelencia de sus trabajos, base
+                  inalterable en el crecimiento sostenido de la misma. Este
+                  crecimiento es apuntalado por nuestra trayectoria en el
+                  mercado de galvanoplastia.
                 </p>
               </div>
 
@@ -64,7 +64,7 @@ export function AboutSection() {
                 </p>
               </div>
 
-              <div className="bg-[var(--durex-primary)]/5 rounded-xl p-6">
+              {/* <div className="bg-[var(--durex-primary)]/5 rounded-xl p-6">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-[var(--durex-primary)]/20 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Target className="text-[var(--durex-primary)]" />
@@ -80,7 +80,7 @@ export function AboutSection() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </motion.div>
           </div>
 

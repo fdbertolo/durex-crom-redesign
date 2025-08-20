@@ -64,7 +64,7 @@ export function EnvironmentSection() {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Innovación y sostenibilidad: nuestro compromiso con el medio
-            ambiente a través de tecnología avanzada y procesos responsables.
+            ambiente a través de procesos responsables.
           </p>
         </motion.div>
 
@@ -79,13 +79,13 @@ export function EnvironmentSection() {
             <div className="space-y-8">
               <div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-6">
-                  Tecnología ambiental{" "}
-                  <span className="text-green-600">avanzada</span>
+                  Responsabilidad con el{" "}
+                  <span className="text-green-600">medio ambiente</span>
                 </h3>
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
                   Durex Crom cuenta con una planta de tratamiento especializada
                   para los efluentes líquidos generados durante el proceso
-                  productivo, diseñada con la más alta tecnología ambiental.
+                  productivo.
                 </p>
                 <div className="bg-green-100 border-l-4 border-green-500 p-6 rounded-r-lg">
                   <h4 className="font-bold text-green-800 mb-2">
@@ -109,7 +109,7 @@ export function EnvironmentSection() {
                       Resultado Innovador
                     </h4>
                     <p className="text-gray-700">
-                      "Pasivamos y neutralizamos cualquier tipo de contaminante"
+                      "Pasivamos y neutralizamos cualquier tipo de residuo especial"
                       logrando un enfoque moderno y completamente responsable
                       con el medio ambiente.
                     </p>
@@ -206,7 +206,7 @@ export function EnvironmentSection() {
         </motion.div>
 
         {/* Environmental Commitment CTA */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -243,7 +243,7 @@ export function EnvironmentSection() {
               <ArrowRight className="w-5 h-5 ml-2" />
             </a>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

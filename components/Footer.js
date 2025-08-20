@@ -1,23 +1,24 @@
+import { Recycle, Phone, Mail, MapPin } from "lucide-react";
+
 export default function Footer() {
   return (
     <>
       <footer className="border-t border-gray-800 px-4 py-12 w-full bg-[var(--durex-dark)]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-16 px-8">
           <div className="flex flex-col flex-1 gap-4">
+            <a href="#hero">
             <img
               src="/logo-h-c.svg"
               alt="Durex Crom Logo"
               className="w-64 h-auto mb-2 mt-2"
-            />
+            /></a>
             <p className="text-sm text-gray-400">
               Más de 30 años especializados en recubrimientos de cromo duro y
               rectificado de precisión para la industria más exigente.
             </p>
             <div className="rounded-lg bg-emerald-900/50 p-3">
               <p className="text-sm text-emerald-400 flex items-center gap-2">
-                <span className="material-symbols-outlined text-emerald-500">
-                  recycling
-                </span>
+                <Recycle className="text-emerald-500" />
                 Comprometidos con el cuidado ambiental.
               </p>
             </div>
@@ -69,27 +70,21 @@ export default function Footer() {
               href="tel:01142626026"
               className="text-sm text-gray-400 flex items-center gap-2 hover:text-gray-100"
             >
-              <span className="material-symbols-outlined text-[var(--durex-accent)]">
-                call
-              </span>
+              <Phone className="text-[var(--durex-accent)]" />
               011 4262 6026
             </a>
             <a
               href="mailto:durexcrom@gmail.com"
               className="text-sm text-gray-400 hover:text-gray-100 w-fit flex items-center gap-2"
             >
-              <span className="material-symbols-outlined text-[var(--durex-accent)]">
-                mail
-              </span>
+              <Mail className="text-[var(--durex-accent)]" />
               durexcrom@gmail.com
             </a>
             <a
               href="https://maps.app.goo.gl/ia2ajbfuipUgrpG2A"
               className="text-sm text-gray-400 flex gap-2 hover:text-gray-100"
             >
-              <span className="material-symbols-outlined text-[var(--durex-accent)]">
-                location_on
-              </span>
+              <MapPin className="text-[var(--durex-accent)]" />
               Enrique Fernández 2355
               <br />
               Lanús Oeste, Buenos Aires

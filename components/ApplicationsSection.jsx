@@ -209,7 +209,7 @@ export function ApplicationsSection() {
             Galería de <span className="text-[var(--durex-primary)]">trabajos realizados</span>
           </h3>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            Una muestra de los proyectos y componentes que hemos procesado con éxito para nuestros clientes industriales.
+            Una muestra de los proyectos y componentes que hemos procesado con éxito para nuestros clientes.
           </p>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

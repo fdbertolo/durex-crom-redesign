@@ -31,7 +31,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div className="flex w-full h-full md:h-screen bg-[#060010]">
+    <div className="flex w-full h-full md:h-screen bg-[#060010]" id="hero">
       <div className="flex w-full max-w-7xl mx-auto flex-col md:flex-row justify-center items-center px-4 sm:px-6 lg:px-8 mb-8 md:mb-0">
         <div
           style={{ width: "100%", height: "60vh" }}
@@ -82,16 +82,15 @@ export default function HeroSection() {
               </h1>
               <div className="bg-zinc-900/50 border-l-4 border-[var(--durex-accent)] p-6 my-8 max-w-2xl">
                 <h2 className="text-xl font-semibold mb-3 text-[var(--durex-accent)]">
-                  Capacidad excepcional a gran escala
+                  Capacidad excepcional
                 </h2>
                 <p className="text-gray-300">
-                  Procesamos piezas de hasta <b> Ø630 mm x 4000 mm </b>con
-                  tecnología de vanguardia
+                  Procesamos piezas de hasta <b> 4000 mm </b>de largo
                 </p>
               </div>
               <p className="text-lg text-gray-300 max-w-2xl mb-8">
                 Especialistas en recubrimientos de cromo duro y rectificado de
-                precisión para la industria más exigente.
+                universal para la industria más exigente.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
