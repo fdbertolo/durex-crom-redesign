@@ -55,7 +55,7 @@ export function ApplicationsSection() {
 
   const galleryImages = [
     { src: "./works/hostias.png", title: "Molde para hostias", category: "Cromo duro" },
-    { src: "./works/gastro-rodillo.png", title: "Rodillo gastronómico", category: "Cromo duro" },
+    { src: "./works/gastro-rodillo.png", title: "Rodillo gastronómico", category: "Cromo duro + Rectificado" },
     { src: "./works/rolo-cracker.png", title: "Rolo Cracker", category: "Cromo duro + Rectificado" },
     { src: "./works/hidra-rtk.png", title: "RTK Hidráulico", category: "Rectificado" },
     { src: "./works/rotor-picadora-agro.png", title: "Rotor de picadora agrario", category: "Cromo duro" },
