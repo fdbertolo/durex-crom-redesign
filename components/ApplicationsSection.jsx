@@ -7,32 +7,32 @@ import { Card, CardContent } from './Card'
 export function ApplicationsSection() {
   const applications = [
     {
-      title: "Tornillo",
+      title: "Tornillo compresor",
       category: "Industria Neumática",
       image: "./works/neuma-tornillo.png",
     },
     {
-      title: "Matriz",
+      title: "Matriz bladder",
       category: "Industria del Caucho",
       image: "./works/caucho-matriz.png",
     },
     {
-      title: "Matriz",
+      title: "Matriz hembra",
       category: "Industria Plástica",
       image: "./works/plasti-matriz.png",
     },
     {
-      title: "Rodillo",
+      title: "Rodillo gofrado",
       category: "Industria Papelera",
       image: "./works/papelera.png",
     },
     {
-      title: "Coso del cosito",
+      title: "Buje",
       category: "Industria Vial",
       image: "./works/vial.png",
     },
     {
-      title: "Rotor",
+      title: "Rotores helicoidales",
       category: "Industria Petrolera",
       image: "./works/petro-rotor.png",
     }
