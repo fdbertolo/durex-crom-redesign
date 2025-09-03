@@ -7,46 +7,34 @@ import { Card, CardContent } from './Card'
 export function ApplicationsSection() {
   const applications = [
     {
-      title: "Rotor Petrolero Cromo Duro",
-      category: "Industria Petrolera",
-      description: "Componentes críticos para equipos de extracción y refinación",
-      image: "https://placedog.net/400/300?random=10",
-      features: ["Alta resistencia", "Larga durabilidad", "Resistencia química"]
+      title: "Tornillo",
+      category: "Industria Neumática",
+      image: "./works/neuma-tornillo.png",
     },
     {
-      title: "Rodillo Agrario (cracker) Cromo Duro",
-      category: "Industria Agrícola", 
-      description: "Elementos para maquinaria agrícola de alta exigencia",
-      image: "https://placedog.net/400/300?random=11",
-      features: ["Resistencia abrasiva", "Bajo mantenimiento", "Eficiencia operativa"]
+      title: "Matriz",
+      category: "Industria del Caucho",
+      image: "./works/caucho-matriz.png",
     },
     {
-      title: "Hélice Extrusora Cromo Duro",
+      title: "Matriz",
       category: "Industria Plástica",
-      description: "Componentes para procesos de extrusión y moldeo",
-      image: "https://placedog.net/400/300?random=12",
-      features: ["Superficie lisa", "Resistencia térmica", "Precisión dimensional"]
+      image: "./works/plasti-matriz.png",
     },
     {
-      title: "Rodillo Calandra Deflector Rectificado",
-      category: "Industria Textil",
-      description: "Elementos de precisión para equipos de calandrado",
-      image: "https://placedog.net/400/300?random=13",
-      features: ["Acabado perfecto", "Tolerancias mínimas", "Uniformidad garantizada"]
+      title: "Rodillo",
+      category: "Industria Papelera",
+      image: "./works/papelera.png",
     },
     {
-      title: "Cigüeñal Estampadora Rectificado",
-      category: "Industria Automotriz",
-      description: "Componentes críticos para maquinaria de estampado",
-      image: "https://placedog.net/400/300?random=14",
-      features: ["Precisión extrema", "Resistencia fatiga", "Acabado superior"]
+      title: "Coso del cosito",
+      category: "Industria Vial",
+      image: "./works/vial.png",
     },
     {
-      title: "Eje de Transmisión Industrial",
-      category: "Industria Metalúrgica",
-      description: "Componentes de transmisión para equipos pesados",
-      image: "https://placedog.net/400/300?random=15",
-      features: ["Resistencia extrema", "Acabado perfecto", "Durabilidad excepcional"]
+      title: "Rotor",
+      category: "Industria Petrolera",
+      image: "./works/petro-rotor.png",
     }
   ]
 
@@ -54,26 +42,26 @@ export function ApplicationsSection() {
     {
       title: "Procesos de Fabricación",
       description: "Aplicación de cromo duro en componentes nuevos durante su fabricación",
-      image: "https://placedog.net/300/200?random=20",
-      color: "bg-[var(--durex-dark)]"
+      image: "./works/molde-macho.png",
+      color: "bg-[var(--durex-accent)]"
     },
     {
       title: "Procesos de Recuperación", 
       description: "Restauración y mejora de componentes existentes mediante cromo duro",
-      image: "https://placedog.net/300/200?random=21",
-      color: "bg-[var(--durex-primary)]"
+      image: "./works/recuperacion.png",
+      color: "bg-[var(--durex-accent)]"
     }
   ]
 
   const galleryImages = [
-    { src: "https://placedog.net/500/400?random=30", title: "Rotor Petrolero Terminado", category: "Petrolera" },
-    { src: "https://placedog.net/500/400?random=31", title: "Rodillo Agrícola Cromado", category: "Agrícola" },
-    { src: "https://placedog.net/500/400?random=32", title: "Hélice Extrusora", category: "Plástica" },
-    { src: "https://placedog.net/500/400?random=33", title: "Cigüeñal Rectificado", category: "Automotriz" },
-    { src: "https://placedog.net/500/400?random=34", title: "Rodillo Textil", category: "Textil" },
-    { src: "https://placedog.net/500/400?random=35", title: "Eje Industrial", category: "Metalúrgica" },
-    { src: "https://placedog.net/500/400?random=36", title: "Componente Personalizado", category: "Industrial" },
-    { src: "https://placedog.net/500/400?random=37", title: "Proceso de Rectificado", category: "Proceso" }
+    { src: "./works/hostias.png", title: "Molde para hostias", category: "Cromo duro" },
+    { src: "./works/gastro-rodillo.png", title: "Rodillo gastronómico", category: "Cromo duro" },
+    { src: "./works/rolo-cracker.png", title: "Rolo Cracker", category: "Cromo duro + Rectificado" },
+    { src: "./works/hidra-rtk.png", title: "RTK Hidráulico", category: "Rectificado" },
+    { src: "./works/rotor-picadora-agro.png", title: "Rotor de picadora agrario", category: "Cromo duro" },
+    { src: "./works/helice-ladrillera.png", title: "Hélice ladrillera", category: "Cromo duro" },
+    { src: "./works/vial2.png", title: "Componente Vial", category: "Cromo duro + Rectificado" },
+    { src: "./works/camisa-fjr-naval.png", title: "Camisa FJR naval", category: "Rectificado" }
   ]
 
   return (
@@ -116,7 +104,7 @@ export function ApplicationsSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4 text-white">
-                    <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-2 ${process.color} text-white`}>
+                    <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-1 ${process.color} text-black`}>
                       {process.title.split(' ')[2]} {/* Fabricación o Recuperación */}
                     </div>
                     <h3 className="text-xl md:text-2xl font-bold mb-2">
@@ -156,27 +144,27 @@ export function ApplicationsSection() {
                 transition={{ duration: 0.6, delay: 0.1 * index }}
                 className="group"
               >
-                <Card className="h-full hover:shadow-xl transition-all duration-300 border-0 overflow-hidden bg-[var(--durex-primary)]/5">
-                  <CardContent className="p-0">
-                    <div className="relative h-48">
+                <Card className="h-full hover:shadow-xl p-0 transition-all duration-300 border-0 overflow-hidden bg-[var(--durex-primary)]/5">
+                  <CardContent className="p-0 relative">
+                    <div className="relative h-96">
                       <img 
                         src={app.image}
                         alt={app.title}
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                    </div>
+                    
+                    <div className="absolute w-full bottom-0 flex flex-col">
                       <span  
-                        className="absolute top-4 left-4 bg-[var(--durex-primary)]/50 text-white p-1 rounded-full text-sm px-2"
+                        className="bg-[var(--durex-primary)]/60 text-white p-1 rounded-full text-sm px-2 ml-6 w-fit mb-1"
                       >
                         {app.category}
                       </span>
-                    </div>
-                    
-                    <div className="p-6">
-                      <h4 className="text-xl font-bold text-[var(--durex-dark)] mb-3 group-hover:text-[var(--durex-primary)] transition-colors duration-300">
+                      <h4 className="text-lg font-bold text-white mb-3 px-6">
                         {app.title}
                       </h4>
-                      
+{/*                       
                       <p className="text-gray-600 mb-4 leading-relaxed">
                         {app.description}
                       </p>
@@ -188,7 +176,7 @@ export function ApplicationsSection() {
                             <span className="text-sm text-gray-700">{feature}</span>
                           </div>
                         ))}
-                      </div>
+                      </div> */}
                     </div>
                   </CardContent>
                 </Card>
@@ -227,8 +215,8 @@ export function ApplicationsSection() {
                   alt={image.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-2 left-2 right-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute bottom-2 left-2 right-2 text-white">
                   <p className="text-xs font-medium">{image.category}</p>
                   <p className="text-sm font-bold">{image.title}</p>
                 </div>
@@ -257,10 +245,10 @@ export function ApplicationsSection() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {[
               { name: "Petrolera", image: "images/petrolera.png" },
-              { name: "Automotriz", image: "images/automotriz.png" },
+              { name: "Hidráulica", image: "images/hidraulica.png" },
               { name: "Agrícola", image: "images/agricola.png" },
               { name: "Textil", image: "images/textil.png" },
-              { name: "Plástica", image: "images/plastica.png" },
+              { name: "Ladrillera", image: "images/ladrillera.png" },
               { name: "Metalúrgica", image: "images/metalurgica.png" },
               { name: "Alimentaria", image: "images/alimentaria.png" },
               { name: "Papelera", image: "images/papelera.png" }

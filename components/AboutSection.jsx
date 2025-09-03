@@ -92,9 +92,9 @@ export function AboutSection() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <Image
-                src="/images/chrome.png"
+                src="/works/fabrica.png"
                 alt="Sobre Nosotros - Durex Crom"
-                className="rounded-xl shadow-[4px_4px_10px_2px_#583b8f66]"
+                className=""
                 width={800}
                 height={700}
                 priority={false}

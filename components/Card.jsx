@@ -64,7 +64,7 @@ function CardContent({ className, ...props }) {
   return (
     <div
       data-slot="card-content"
-      className={cn("px-6 [&:last-child]:pb-6", className)}
+      className={cn("p-0", className)}
       {...props}
     />
   );
