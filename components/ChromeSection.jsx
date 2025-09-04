@@ -99,12 +99,12 @@ export function ChromeSection() {
                 piezas, transformando sus propiedades mecánicas y químicas.
               </p>
               <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                Esta técnica proporciona una dureza superficial excepcional
-                (800-1000 HV), resistencia al desgaste y propiedades
+                Esta técnica proporciona una dureza superficial excepcional,
+                65 a 72 HRC (Rockwell C) o 850 a 1200 Vickers (Hv), resistencia al desgaste y propiedades
                 anti-corrosivas que extienden significativamente la vida útil de
                 los componentes.
               </p>
-              <div className="bg-[var(--durex-primary)]/5 border-l-4 border-[var(--durex-primary)] p-6 rounded-r-lg">
+              {/* <div className="bg-[var(--durex-primary)]/5 border-l-4 border-[var(--durex-primary)] p-6 rounded-r-lg">
                 <h4 className="font-bold text-[var(--durex-primary)] mb-2">
                   Tecnología avanzada
                 </h4>
@@ -113,7 +113,7 @@ export function ChromeSection() {
                   para garantizar un recubrimiento uniforme y de máxima calidad
                   en cada pieza.
                 </p>
-              </div>
+              </div> */}
             </div>
 
             <div className="space-y-6">
@@ -122,7 +122,7 @@ export function ChromeSection() {
                 <Image
                   src="/images/chrome.png"
                   alt="Proceso de cromado industrial en máquina especializada"
-                  className="w-full object-cover h-64"
+                  className="w-full object-cover h-48"
                   width={600} // Valor estimado para mantener la proporción de h-64
                   height={256} // Altura de 256px para h-64 (256/16 = 16rem = 64px de Tailwind)
                 />

@@ -91,7 +91,7 @@ export const Navigation = ({ dataId }) => {
           ))}
           <a
             href="https://api.whatsapp.com/send?phone=5491149488179"
-            className="flex mx-3 py-1 px-3 text-white bg-green-600 rounded items-center justify-center my-auto font-semibold gap-2 border-2 border-green-600 hover:bg-transparent cursor-pointer"
+            className="flex mx-3 py-1 px-3 text-white bg-green-800 rounded items-center justify-center my-auto font-semibold gap-2 border-2 border-green-800 hover:bg-transparent cursor-pointer"
           >
             <div className="relative h-8 w-8 flex items-center justify-center">
               <svg
